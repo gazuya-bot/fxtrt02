@@ -14,9 +14,8 @@ class CurrencyController extends Controller
     public function currency()
     {
         $user_id = Auth::id();
-        // $currency_data = Currency::where('active',1)->where('user_id', $user_id)->orderby('id','desc')->get();
-        $currency_act = Currency::where('active',1)->orderby('currency','asc')->get();
-        $currency_del = Currency::where('active',0)->orderby('currency','asc')->get();
+        $currency_act = Currency::where('active',1)->where('user_id', $user_id)->orderby('currency','asc')->get();
+        $currency_del = Currency::where('active',0)->where('user_id', $user_id)->orderby('currency','asc')->get();
         return view('currency', compact('currency_act','currency_del'));
     }
 

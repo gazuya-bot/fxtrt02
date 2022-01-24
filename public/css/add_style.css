@@ -440,3 +440,15 @@ span.home {font-size: 15px;}
 
 /* 通貨管理ボタン */
 .w-75{font-size: 15px;}
+
+/* セレクトボックッスデフォルトキャンセル */
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+
+element.style {
+    width: 100%!important;
+}
