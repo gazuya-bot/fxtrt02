@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'ユーザー設定')
+@section('title', '通貨ペア管理')
 
 @section('content_header')
-    <h1>ユーザー設定</h1>
+    <h1>通貨ペア管理</h1>
 @stop
 
 @section('content')
@@ -13,29 +13,41 @@
 </main>
 
 <div class="user-box container-fluid">
-    <form method="post" action="/user_change" class="row" enctype="multipart/form-data">
+    <form method="post" action="/currency_change" class="row">
     @csrf
-        <!-- 左側 -->
-        <div class="left-box col-md-12 row">
-            <!-- 登録日 -->
-            <h3 class="col-3 in-min">登録日</h3>
-            <div class="col-9 in-min "><p class="u_line_non">{{ Auth::user()->created_at }}</p></div>
-            <!-- ユーザーID -->
-            <h3 class="col-3 in-min">ID</h3>
-            <div class="col-9 in-min"><p class="u_line_non">{{ Auth::user()->id }}</p></div>
-            <!-- ユーザー名 -->
-            <h3 class="col-3 in-min">名前</h3>
-            <div class="col-9 in-min"><input value="{{ Auth::user()->name }}" type="text" class="in-ans form-control u_line" name="name"></div>
-            <!-- メールアドレス -->
-            <h3 class="col-3 in-min">メール</h3>
-            <div class="col-9 in-min"><input value="{{ Auth::user()->email }}" type="" class="in-ans form-control u_line" name="email"></div>
-        
-            <!--  変更ボタン -->
-            <div class="in-btn col-12">
-                <input type="submit" class="btn btn-primary w-100 btn_submit" name="btn_submit" value="変更">
+        <!-- 取引数量 -->
+        <div class="in-min col-12 row">
+            <div class="offset-1 col-8">
+                <input type="text" class="in-ans form-control u_line" name="currency_pair" placeholder="トレードに使用する通貨ペアを入力">
+            </div>
+            <!--  登録ボタン -->
+            <div class="col-3">
+                <input type="submit" class="btn btn-primary w-75 btn_submit" name="btn_submit_01" value="登録">
             </div>
         </div>
     </form>
+
+
+    <div class="all-box col-12 row">
+        <div class="right-box col-md-12 row">
+            <h2 class="col-12">現在設定中</h2>
+            @foreach($currency_act as $data)
+                <div class="col-3 check_currency">{{ $data->currency }}</div>
+                <div class="col-3"><button class="btn btn-danger w-75 btn_submit" onclick="currency_delete('{{ $data->id }}')">非表示</button></div>
+            @endforeach
+        </div>
+        
+        <!-- 右側 -->
+        <div class="right-box col-md-12 row">
+            <h2 class="col-12">非表示中</h2>
+                @foreach($currency_del as $data)
+                    <div class="col-3 check_currency">{{ $data->currency }}</div>
+                    <div class="col-3"><button class="btn btn-primary w-75 btn_submit" onclick="currency_change('{{ $data->id }}')">表示</button></div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
 </div>
 
 @stop
@@ -89,4 +101,30 @@
             });
         @endif
     </script>
+
+    <!-- 通貨非表示 -->
+    <script>
+    function currency_delete(id){
+        var data_id = id
+        if(window.confirm('非表示にしますか？')){
+            // alert('非表示にしました。');
+            // 画面遷移
+            location.href = "/currency_del/" + data_id;
+        }
+    }
+    </script>
+
+    <!-- 通貨表示 -->
+    <script>
+    function currency_change(id){
+        var data_id = id
+        if(window.confirm('表示しますか？')){
+            // alert('表示しました。');
+            // 画面遷移
+            location.href = "/currency_act/" + data_id;
+        }
+    }
+    </script>
+
+
 @stop

@@ -1,4 +1,4 @@
-body{color: #fff!important;background-color: #343a40!important;}
+body{color: #fff!important;background-color: #343a40!important;font-family: 'Kosugi Maru', sans-serif!important;}
 
 /* ヘッダーメニュー */
 .main-header{background-color: #343a40!important;}
@@ -25,12 +25,19 @@ body{color: #fff!important;background-color: #343a40!important;}
 h1{font-size: 30px!important;
     text-align: center;
     padding-top: 20px;
+    padding-bottom: 10px;
     font-family: 'Kosugi Maru', sans-serif!important;
 }
 
-h2{font-size: 20px!important;
+h2{font-size: 23px!important;
     text-align: center;
-    padding: 5px 0 10px 0;
+    padding: 15px 0 13px 0;
+    font-family: 'Kosugi Maru', sans-serif!important;
+}
+
+h3{font-size: 18px!important;
+    text-align: center;
+    /* padding: 5px 0 10px 0; */
     font-family: 'Kosugi Maru', sans-serif!important;
 }
 
@@ -424,24 +431,12 @@ span.home {font-size: 15px;}
     font-size: 18px;
 }
 
-.currency_check_title{margin-top: 30px;}
+.currency_check_title{font-size: 20px;padding-bottom: 30px;}
 
-/* 通貨ペア選択 */
-.check_currency{
-    height: 30px;
-    width: 15px;
-    padding-bottom: 10px;
-    text-align: center;
-    font-size: 18px;
-}
-.u_line, .check_currency{cursor: pointer;}
+/* 通貨ペア管理 */
+.check_currency{text-align: center;font-size: 22px;margin-bottom:25px;}
 
-/* 通貨ペア選択 */
-.check-group{
-    margin: 0!important;
-    padding: 0!important;
-    text-align: justify;
-}
+.u_line{cursor: pointer;}
 
-/* 入力欄表題 */
-.title_name{font-weight: bold;}
+/* 通貨管理ボタン */
+.w-75{font-size: 15px;}

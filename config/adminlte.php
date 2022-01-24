@@ -271,15 +271,17 @@ return [
             // 'label'       => 'Output',
             // 'label_color' => 'primary',
         ],        
-        // [
-        //     'text'        => '集計画面',
-        //     'url'         => '/totalling',
-        //     'icon'        => 'far fa-fw fa-file',
-        // ],  
         [
             'text'        => 'ユーザー設定',
             'url'         => '/user',
             'icon'        => 'fas fa-user-alt',
+            // 'label'       => 'Logout',
+            // 'label_color' => 'primary',
+        ],
+        [
+            'text'        => '通貨ペア管理',
+            'url'         => '/currency',
+            'icon'        => 'fas fa-dollar-sign',
             // 'label'       => 'Logout',
             // 'label_color' => 'primary',
         ],

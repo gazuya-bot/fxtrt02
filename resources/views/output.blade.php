@@ -87,11 +87,11 @@
 
 
                         <div class="in-btn col-6">
-                            <button class="btn btn-primary w-100 btn_submit" onclick="bbs_change('{{ $data->id }}')">編集</button>
+                            <button class="btn btn-primary w-100 btn_submit" onclick="data_change('{{ $data->id }}')">編集</button>
                             <!-- <a href="/output_change"><button class="btn btn-primary w-100 btn_submit">編集</button></a> -->
                         </div>
                         <div class="in-btn col-6">
-                            <button class="btn btn-danger w-100 btn_submit" onclick="bbs_delete('{{ $data->id }}')">削除</button>
+                            <button class="btn btn-danger w-100 btn_submit" onclick="data_delete('{{ $data->id }}')">削除</button>
                         </div>
                     </div>
                 </div>
@@ -133,27 +133,27 @@
     </script>
     <!-- Enterキー無効 -->
     <script src="{{ asset('/js/buysell.js') }}"></script>
-    <!-- Enterキー無効 -->
+    <!-- アコーディオン -->
     <script src="{{ asset('/js/accordion.js') }}"></script>
 
     <!-- 投稿削除 -->
     <script>
-    function bbs_delete(id){
-        var bbs_id = id
+    function data_delete(id){
+        var data_id = id
         if(window.confirm('削除しますか')){
             alert('削除しました。');
             // 画面遷移
-            location.href = "/bbs_delete/" + bbs_id;
+            location.href = "/data_delete/" + data_id;
         }
     }
     </script>
 
     <!-- 投稿編集 -->
     <script>
-    function bbs_change(id){
-        var bbs_id = id
+    function data_change(id){
+        var data_id = id
         // 画面遷移
-        location.href = "/output_change/" + bbs_id;
+        location.href = "/output_change/" + data_id;
     }
     </script>
 

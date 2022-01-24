@@ -15,15 +15,13 @@
         <div class="left-box col-md-6 row">
             <!-- 取引通貨 -->
             <div class="in-min col-12 row">
-                <div class="col-3">取引通貨</div>
+                <h3 class="col-3">取引通貨</h3>
                 <div class="col-9">
                     <select class="in-ans form-control u_line" id="trade_currency" name="trade_currency" value="{{old('trade_currency')}}">
                         <option value=""></option>
-                        <option value="USDJPY">USD/JPY</option>
-                        <option value="GBPUSD">GBP/USD</option>
-                        <option value="GBPJPY">GBP/JPY</option>
-                        <option value="EURUSD">EUR/USD</option>
-                        <option value="EURJPY">EUR/JPY</option>
+                        @foreach($currency_act as $data)
+                            <option value={{ $data->currency }} >{{ $data->currency }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="err-msg offset-3 col-9">
@@ -34,7 +32,7 @@
             </div>
             <!-- 取引数量 -->
             <div class="in-min col-12 row">
-                <div class="col-3">取引数量</div>
+                <h3 class="col-3">取引数量</h3>
                 <div class="col-9">
                     <input type="number" class="in-ans form-control u_line" name="trade_num" value="{{old('trade_num')}}">
                 </div>
@@ -46,7 +44,7 @@
             </div>
             <!-- 売買 -->
             <div class="in-min col-12 row">
-                <div class="col-3">売買</div>
+                <h3 class="col-3">売買</h3>
                 <div class="col-9">
                     <select class="in-ans form-control u_line" name="buy_sell">
                         <option value=""></option>
@@ -62,7 +60,7 @@
             </div>
             <!-- 約定日時 -->
             <div class="in-min col-12 row">
-                <div class="col-3">約定日時</div>
+                <h3 class="col-3">約定日時</h3>
                 <div class="col-9">
                     <input type="datetime-local" class="in-ans form-control u_line" name="start_day" value="{{old('start_day')}}">
                 </div>
@@ -75,7 +73,7 @@
 
             <!-- 決済日時 -->
             <div class="in-min col-12 row">
-                <div class="col-3">決済日時</div>
+                <h3 class="col-3">決済日時</h3>
                 <div class="col-9">
                     <input type="datetime-local" class="in-ans form-control u_line" name="end_day" value="{{old('end_day')}}">
                 </div>
@@ -88,7 +86,7 @@
 
             <!-- 約定レート -->
             <div class="in-min col-12 row">
-                <div class="col-3">約定レート</div>
+                <h3 class="col-3">約定レート</h3>
                 <div class="col-9">
                     <input type="number" class="in-ans form-control u_line" name="start_rate" value="{{old('start_rate')}}">
                 </div>    
@@ -101,7 +99,7 @@
 
             <!-- 決済レート -->
             <div class="in-min col-12 row">
-                <div class="col-3">決済レート</div>
+                <h3 class="col-3">決済レート</h3>
                 <div class="col-9">
                     <input type="number" class="in-ans form-control u_line" name="end_rate" value="{{old('end_rate')}}">
                 </div>    
@@ -114,7 +112,7 @@
 
             <!-- 損益(pips) -->
             <div class="in-min col-12 row">
-                <div class="col-3">損益(pips)</div>
+                <h3 class="col-3">損益(pips)</h3>
                 <div class="col-9">
                     <input type="number" class="in-ans form-control u_line" name="profit_pips" value="{{old('profit_pips')}}">
                 </div>
@@ -127,7 +125,7 @@
 
             <!--  損益(円) -->
             <div class="in-min col-12 row">
-                <div class="col-3">損益(円)</div>
+                <h3 class="col-3">損益(円)</h3>
                 <div class="col-9">
                     <input type="number" class="in-ans form-control u_line" name="profit_yen" value="{{old('profit_yen')}}">
                 </div>
@@ -143,7 +141,7 @@
         <div class="right-box col-md-6 row">
             <!-- 画像01 -->
             <div class="in-min col-12 row">
-                <div class="col-3">チャート01</div>
+                <h3 class="col-3">チャート01</h3>
                 <div class="col-9">
                     <input type="file" class="in-ans form-control-file" name="img_01" accept="image/*" multiple>
                 </div>
@@ -155,7 +153,7 @@
             </div>
             <!-- 画像02 -->
             <div class="in-min col-12 row">
-                <div class="col-3">チャート02</div>
+                <h3 class="col-3">チャート02</h3>
                 <div class="col-9">
                     <input type="file" class="in-ans form-control-file" name="img_02" accept="image/*" multiple>
                 </div>
@@ -168,7 +166,7 @@
             
             <!-- 備考（テクニカル分析） -->
             <div class="in-min col-12">
-                <div class="">備考（テクニカル分析）</div>
+                <h3 class="">備考（テクニカル分析）</h3>
                 <div class="">
                     <textarea rows=8 class="in-ans form-control" name="remarks_tech">{{old('remarks_tech')}}</textarea>
                 </div>
@@ -181,7 +179,7 @@
 
             <!-- 備考（ファンダメンタル分析） -->
             <div class="in-min col-12">
-                <div class="">備考（ファンダメンタル分析）</div>
+                <h3 class="">備考（ファンダメンタル分析）</h3>
                 <div class="">
                     <textarea rows=8 class="in-ans form-control" name="remarks_funda">{{old('remarks_funda')}}</textarea>
                 </div>

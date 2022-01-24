@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Input;
+use App\Models\Currency;
 // ログイン情報取得に必要
 use Illuminate\Support\Facades\Auth;
 
@@ -12,7 +13,8 @@ class InputController extends Controller
     // 入力画面へ遷移
     public function input()
     {
-        return view('input');
+        $currency_act = Currency::where('active',1)->orderby('id','asc')->get();
+        return view('input', compact('currency_act'));
     }
 
     // 入力データ書き込み

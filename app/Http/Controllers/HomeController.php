@@ -55,29 +55,44 @@ class HomeController extends Controller
             ->where('user_id', $id)
             ->count();
 
-        // 前日の勝ち件数
+        // 前日の勝率
         $d_win = Input::where('active',1)
             ->where('win_lose',1)
             ->whereDate('start_day', $d_ago)
             ->where('user_id', $id)
             ->count();
-        $d_win_rate = ($d_win / $d_count)*100;
 
-        // 週間の勝ち件数
+        if($d_win > 0){
+            $d_win_rate = ($d_win / $d_count)*100;
+        }else{
+            $d_win_rate = 0;
+        }
+
+        // 週間の勝率
         $w_win = Input::where('active',1)
             ->where('win_lose',1)
             ->whereBetween('start_day', [$w_ago, $today])
             ->where('user_id', $id)
             ->count();
-        $w_win_rate = ($w_win / $w_count)*100;
 
-        // 月間の勝ち件数
+        if ($w_win > 0){
+            $w_win_rate = ($w_win / $w_count)*100;
+        }else{
+            $w_win_rate = 0;
+        }
+
+        // 月間の勝率
         $m_win = Input::where('active',1)
             ->where('win_lose',1)
             ->whereBetween('start_day', [$m_ago, $today])
             ->where('user_id', $id)
             ->count();
-        $m_win_rate = ($m_win / $m_count)*100;
+        
+        if($m_win > 0){
+            $m_win_rate = ($m_win / $m_count)*100;
+        }else{
+            $m_win_rate = 0;
+        }
 
         // 前日の利益(pips)
         $d_pips = Input::where('active',1)
