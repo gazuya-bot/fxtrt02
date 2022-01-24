@@ -29,20 +29,20 @@
 
 
     <div class="all-box col-12 row">
-        <div class="right-box col-md-12 row">
+        <div class="right-box col-12 row">
             <h2 class="col-12">現在設定中</h2>
             @foreach($currency_act as $data)
                 <div class="col-3 check_currency">{{ $data->currency }}</div>
-                <div class="col-3"><button class="btn btn-danger w-75 btn_submit" onclick="currency_delete('{{ $data->id }}')">非表示</button></div>
+                <div class="col-3"><button class="btn btn-danger w-75 btn_submit" onclick="currency_delete('{{ $data->id }}')"><i class="fas fa-trash-alt"></i></button></div>
             @endforeach
         </div>
         
         <!-- 右側 -->
-        <div class="right-box col-md-12 row">
+        <div class="right-box col-12 row">
             <h2 class="col-12">非表示中</h2>
                 @foreach($currency_del as $data)
                     <div class="col-3 check_currency">{{ $data->currency }}</div>
-                    <div class="col-3"><button class="btn btn-primary w-75 btn_submit" onclick="currency_change('{{ $data->id }}')">表示</button></div>
+                    <div class="col-3"><button class="btn btn-primary w-75 btn_submit" onclick="currency_change('{{ $data->id }}')"><i class="fas fa-trash-restore-alt"></i></button></div>
                 @endforeach
             </div>
         </div>

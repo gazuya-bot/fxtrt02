@@ -29,9 +29,9 @@ h1{font-size: 30px!important;
     font-family: 'Kosugi Maru', sans-serif!important;
 }
 
-h2{font-size: 23px!important;
+h2{font-size: 25px!important;
     text-align: center;
-    padding: 15px 0 13px 0;
+    padding: 20px 0 13px 0;
     font-family: 'Kosugi Maru', sans-serif!important;
 }
 
@@ -434,7 +434,7 @@ span.home {font-size: 15px;}
 .currency_check_title{font-size: 20px;padding-bottom: 30px;}
 
 /* 通貨ペア管理 */
-.check_currency{text-align: center;font-size: 22px;margin-bottom:25px;}
+.check_currency{text-align: center;font-size: 25px;margin-bottom:25px;letter-spacing: 2px;}
 
 .u_line{cursor: pointer;}
 

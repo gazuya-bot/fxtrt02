@@ -31,7 +31,7 @@
             <div class="col-9 in-min"><input value="{{ Auth::user()->email }}" type="" class="in-ans form-control u_line" name="email"></div>
         
             <!--  変更ボタン -->
-            <div class="in-btn col-12">
+            <div class="in-btn offset-1 col-11">
                 <input type="submit" class="btn btn-primary w-100 btn_submit" name="btn_submit" value="変更">
             </div>
         </div>
