@@ -483,9 +483,9 @@ element.style {
         .u_line_non{height: 33px;font-size: 15px;}
         
         .s_02 .accordion_one .accordion_inner {
-            padding: 0 0 0 10px;
+            padding: 5px 0;
         }
 
-        .all-box {margin-left: 18px;}
+        /* .all-box {margin-left: 18px;} */
 
 }

@@ -94,11 +94,11 @@
 
 
                         <div class="in-btn col-6">
-                            <button class="btn btn-primary w-100 btn_submit" onclick="data_change('{{ $data->id }}')">編集</button>
+                            <button class="btn btn-primary w-100 btn_submit user-btn" onclick="data_change('{{ $data->id }}')">編集</button>
                             <!-- <a href="/output_change"><button class="btn btn-primary w-100 btn_submit">編集</button></a> -->
                         </div>
                         <div class="in-btn col-6">
-                            <button class="btn btn-danger w-100 btn_submit" onclick="data_delete('{{ $data->id }}')">削除</button>
+                            <button class="btn btn-danger w-100 btn_submit user-btn" onclick="data_delete('{{ $data->id }}')">削除</button>
                         </div>
                     </div>
                 </div>
