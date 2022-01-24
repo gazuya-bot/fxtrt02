@@ -49,17 +49,24 @@
                             @endif
                         </div>
                         <div class="col-12 row">
-                            <div class="col-4 out_item">約定日時 / レート</div>
-                            <div class="col-3 out_item">{{ $data->start_day }}</div>
-                            <div class="col-2 out_item">/</div>
-                            <div class="col-3 out_item">{{ $data->start_rate }}</div>
+                            <div class="col-4 out_item">約定日時</div>
+                            <div class="col-8 out_item">{{ $data->start_day }}</div>
                         </div>
                         <div class="col-12 row">
-                        <div class="col-4 out_item">約定日時 / レート</div>
-                            <div class="col-3 out_item">{{ $data->end_day }}</div>
-                            <div class="col-2 out_item">/</div>
-                            <div class="col-3 out_item">{{ $data->end_rate }}</div>
+                            <div class="col-4 out_item">約定レート</div>
+                            <div class="col-8 out_item">{{ $data->start_rate }}</div>
                         </div>
+
+                        <div class="col-12 row">
+                            <div class="col-4 out_item">決済日時</div>
+                            <div class="col-8 out_item">{{ $data->end_day }}</div>
+                        </div>
+
+                        <div class="col-12 row">
+                            <div class="col-4 out_item">決済レート</div>
+                            <div class="col-8 out_item">{{ $data->end_rate }}</div>
+                        </div>
+
                         <div class="col-12 row">
                             <div class="col-4 out_item">損益（pips）</div>
                             <div class="col-8 out_item">{{ $data->profit_pips }}</div>
