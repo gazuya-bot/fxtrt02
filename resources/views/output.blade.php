@@ -13,8 +13,8 @@
         <!-- 検索 -->
 
         <form class="in-min col-12 row text-center" method="GET" action="">
-            <div class="col-8"><input class="in-ans form-control" type="search" placeholder="検索キーワードを入力" name="search" value="@if (isset($search)) {{ $search }} @endif"></div>
-            <div class="col-2"><button class="btn btn-secondary" type="submit">検索</button></div>
+            <div class="col-9"><input class="in-ans form-control" type="search" placeholder="検索キーワードを入力" name="search" value="@if (isset($search)) {{ $search }} @endif"></div>
+            <div class="col-3"><button class="btn btn-secondary" type="submit">検索</button></div>
         </form>
 
 

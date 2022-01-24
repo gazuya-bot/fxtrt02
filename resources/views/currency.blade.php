@@ -17,7 +17,7 @@
     @csrf
         <!-- 取引数量 -->
         <div class="in-min col-12 row">
-            <div class="offset-1 col-8">
+            <div class="col-9">
                 <input type="text" class="in-ans form-control u_line" name="currency_pair" placeholder="トレードに使用する通貨ペアを入力">
             </div>
             <!--  登録ボタン -->
@@ -29,7 +29,7 @@
 
 
     <div class="all-box col-12 row">
-        <div class="right-box col-12 row">
+        <div class="col-12 row">
             <h2 class="col-12">現在設定中</h2>
             @foreach($currency_act as $data)
                 <div class="col-3 check_currency">{{ $data->currency }}</div>
@@ -38,7 +38,7 @@
         </div>
         
         <!-- 右側 -->
-        <div class="right-box col-12 row">
+        <div class="col-12 row">
             <h2 class="col-12">非表示中</h2>
                 @foreach($currency_del as $data)
                     <div class="col-3 check_currency">{{ $data->currency }}</div>
