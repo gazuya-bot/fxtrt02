@@ -36,7 +36,7 @@
                         </div>
                     </div>
 
-                    <!-- パスワード再設定 -->
+                    <!-- パスワード（確認用） -->
                     <div class="form-group row">
                         <div class="col-md-12 cp_iptxt">
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="パスワードを入力（確認用）">
@@ -44,10 +44,11 @@
                         </div>
                     </div>
 
+                    <!-- パスワード変更ボタン -->
                     <div class="form-group row mb-0">
-                        <div class="col-md-6 offset-md-4">
-                            <button type="submit" class="btn btn-primary">
-                                {{ __('form.register.pass_change') }}
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-primary login">
+                                {{ __('form.register.pass_change_btn') }}
                             </button>
                         </div>
                     </div>

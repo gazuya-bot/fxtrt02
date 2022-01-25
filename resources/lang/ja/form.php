@@ -17,6 +17,6 @@ return [
         'pass_change' => 'パスワードを忘れた方はコチラ！',
         'pass_reset' => 'パスワードリセット',
         'pass_reset_send' => 'パスワードを再設定する',
-        'pass_reset_change' => 'パスワードを変更する',
+        'pass_change_btn' => 'パスワードを変更する',
     ]
 ];

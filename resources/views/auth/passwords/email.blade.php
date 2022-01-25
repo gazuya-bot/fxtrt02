@@ -5,12 +5,12 @@
     <div class="card">
         <h1 class="login">{{ __('form.register.pass_reset') }}</h1>
         <div class="card-body">
-<!-- 
+
             @if (session('status'))
                 <div class="alert alert-success" role="alert">
                     {{ session('status') }}
                 </div>
-            @endif -->
+            @endif
 
             <form method="POST" action="{{ route('password.email') }}">
                 @csrf
