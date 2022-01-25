@@ -16,7 +16,7 @@
                 <div class="col-2 row">
                     <img class="home"src="{{ asset('img_default/FX-logo-03.svg') }}" alt="">
                 </div>
-                <div class="col-8 welcome-user">ようこそ &ensp;<b>{{ Auth::user()->name }}&thinsp;（&thinsp;ユーザーID&thinsp;:&thinsp;{{ Auth::user()->id }}&thinsp;）</b>&ensp;様</div>
+                <div class="col-8 welcome-user">ようこそ &ensp;<span>{{ Auth::user()->name }}&thinsp;（&thinsp;ユーザーID&thinsp;:&thinsp;{{ Auth::user()->id }}&thinsp;）</span>&ensp;様</div>
                 <a href="/user" class="col-2 welcome-user other-link"><i class="fas fa-user"></i></a>
             </div>
         </div>

@@ -4,14 +4,17 @@ body{color: #fff!important;background-color: #343a40!important;font-family: 'Kos
 .main-header{background-color: #343a40!important;}
 
 /* ヘッダーロゴ */
-.brand-link.brand-image {
-    margin-top: -2px;
-    max-height: 30px;
-    width: 30px;
+.elevation-3 {
+    box-shadow: none!important;
+    width: 30px!important;
     opacity: 1;
+    margin-top: -1px!important;
+    margin-right: 10px!important;
+    max-height: 30px!important;
+    /* margin-left: 5px!important; */
 }
 b {
-    letter-spacing: 3px!important;
+    letter-spacing: 5px!important;
 }
 /* ログアウトモーダル */
 .btn-block{background-color: #343a40!important;color: #fff!important;}
@@ -234,10 +237,7 @@ h1.login{margin-bottom: 30px;}
     background-color:transparent!important;
     height: 100%;
 }
-.card-all {
-    height: 100%;
-}
-
+.card-all {height: 100%;}
 h1.pass-send{margin-top: 100px;}
 
 /* インプットボックス */
@@ -520,10 +520,7 @@ element.style {
 
         /* 全体の位置調整 */
         .card {
-            /* margin: 200px auto; */
             margin-top: 50px;
-        }
-        .card-all {
         }
 
         h1.pass-send{margin-top: 0;}

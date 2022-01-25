@@ -8,10 +8,6 @@
 
 @section('content')
 
-<main class="mt-4">
-    @yield('content')
-</main>
-
 <div class="user-box container-fluid">
     <form method="post" action="/user_change" class="row" enctype="multipart/form-data">
     @csrf
