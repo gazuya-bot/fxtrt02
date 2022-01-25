@@ -460,6 +460,12 @@ element.style {
 
 .user-btn{margin-top: 20px;}
 
+/* パスワード再設定用メール送信完了 */
+.alert-success {
+    color: #0f5132;
+    background-color: none;
+    border-color: none;
+}
 
 
 
