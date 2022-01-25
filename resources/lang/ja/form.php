@@ -15,5 +15,7 @@ return [
         'keep_login' => 'ログイン状態を維持する',
         'sign_up' => '会員登録はコチラ！',
         'pass_change' => 'パスワードを忘れた方はコチラ！',
+        'pass_reset' => 'パスワードリセット',
+        'pass_reset_send' => 'パスワードを再設定する',
     ]
 ];
