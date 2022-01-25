@@ -27,7 +27,7 @@ class InputController extends Controller
                 'trade_currency' => 'required',
                 'trade_num' => 'required|numeric|max:10',
                 'buy_sell' => 'required',
-                'start_day' => 'required|date|after:yesterday',
+                'start_day' => 'required|date',
                 'end_day' => 'required|date|after:start_day',
                 'start_rate' => 'required|numeric',
                 'end_rate' => 'required|numeric',
