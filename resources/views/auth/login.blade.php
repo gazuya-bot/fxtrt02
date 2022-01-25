@@ -59,7 +59,7 @@
                 <div class="col-md-12 ">
                     @guest
                         @if (Route::has('register'))
-                                <a class="btn btn-link nav-link re-pass" href="{{ route('register') }}">{{ __('form.register.sign_up') }}</a>
+                                <a class="nav-link re-pass" href="{{ route('register') }}">{{ __('form.register.sign_up') }}</a>
                         @endif
                     @else
                         <a id="navbarDropdown" class="nav-link dropdown-toggle re-pass" href="{{ route('home') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -80,7 +80,7 @@
                     @endguest
 
                     @if (Route::has('password.request'))
-                        <a class="btn btn-link nav-link" href="{{ route('password.request') }}">
+                        <a class="nav-link" href="{{ route('password.request') }}">
                             {{ __('form.register.pass_change') }}
                         </a>
                     @endif

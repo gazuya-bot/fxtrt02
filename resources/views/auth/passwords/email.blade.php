@@ -35,10 +35,10 @@
                         </button>
                     </div>
                 </div>   
-                
+
                 <!-- 戻るリンク -->
                 <div class="col-md-12 ">
-                    <a class="btn btn-link nav-link re-pass" href="/">戻る</a>
+                    <a class="nav-link re-pass" href="/">戻る</a>
                 </div>    
             </form>
         </div>

@@ -9,6 +9,11 @@ body{color: #fff!important;background-color: #343a40!important;font-family: 'Kos
 /* サイドメニュー */
 .fa-bars, .dropdown-toggle, .brand-text b, .nav-link p{color: #fff!important;}
 
+a.nav-link{color: #fff;padding-left: 0!important;padding-right: 0!important;text-align: center;}
+
+i{color: #fff;}
+i:hover{color: #1e90ff;}
+
 /* メイン背景 */
 .content-wrapper {
     background-color: #343a40!important;
