@@ -8,10 +8,6 @@
 
 @section('content')
 
-<main class="mt-4">
-    @yield('content')
-</main>
-
 <div class="all-box container-fluid">
     <form method="POST" action="{{ route('input_change', ['id'=>$change_data->id]) }}" class="row" enctype="multipart/form-data">
     @csrf
