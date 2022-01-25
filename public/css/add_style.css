@@ -508,7 +508,7 @@ element.style {
         .in-btn{margin: 0;padding-left: 0;}
 
         /* インプットボックスデザイン */
-        .u_line{height: 34px;font-size: 15px;}
+        .u_line{height: 35px;font-size: 15px;}
         /* ユーザー編集不可 */
         .u_line_non{height: 33px;font-size: 15px;}
         
