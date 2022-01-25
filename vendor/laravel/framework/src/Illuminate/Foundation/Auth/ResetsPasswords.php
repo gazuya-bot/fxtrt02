@@ -24,7 +24,7 @@ trait ResetsPasswords
      */
     public function showResetForm(Request $request, $token = null)
     {
-        $test = $request->email;
+        $test = "test";
         echo ($test);
         exit;
         
