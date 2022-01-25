@@ -246,7 +246,6 @@ input.login{background-color: rgb(255, 255, 255, 0.8)!important;margin: 0!import
 .keep-login{margin-bottom: 20px;}
 
 /* 背景画像設定 */
-.py-4 {padding: 0Iimportant;}
 
 main{
     background-image: url("/img_default/FX-logo.svg");
@@ -517,6 +516,23 @@ element.style {
             padding: 5px 0;
         }
 
+
+
+        /* 全体の位置調整 */
+        .card {
+            /* margin: 200px auto; */
+            margin-top: 50px;
+        }
+        .card-all {
+        }
+
+        h1.pass-send{margin-top: 0;}
+
+        /* 背景画像設定 */
+        main{
+            background-image: none;
+            width: 350px;
+        }
 
 
 }
