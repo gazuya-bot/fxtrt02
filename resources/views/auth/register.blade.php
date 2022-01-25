@@ -12,7 +12,7 @@
                 <!-- 名前 -->
                 <div class="form-group row">
                     <div class="col-md-12 cp_iptxt">
-                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="名前を入力" autofocus>
+                        <input id="name" type="text" class="login form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="名前を入力" autofocus>
                         <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
                         @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -25,7 +25,7 @@
                 <!-- メールアドレス -->
                 <div class="form-group row">
                     <div class="col-md-12 cp_iptxt">
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="メールアドレスを入力">
+                        <input id="email" type="email" class="login form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="メールアドレスを入力">
                         <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -38,7 +38,7 @@
                 <!-- パスワード -->
                 <div class="form-group row">
                     <div class="col-md-12 cp_iptxt">
-                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="パスワードを入力">
+                        <input id="password" type="password" class="login form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="パスワードを入力">
                         <i class="fa fa-key fa-lg fa-fw" aria-hidden="true"></i>
                         @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -51,7 +51,7 @@
                 <!-- パスワード（確認用） -->
                 <div class="form-group row">
                     <div class="col-md-12 cp_iptxt">
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="パスワードを入力（確認用）">
+                        <input id="password-confirm" type="password" class="login form-control" name="password_confirmation" required autocomplete="new-password" placeholder="パスワードを入力（確認用）">
                         <i class="fa fa-key fa-lg fa-fw" aria-hidden="true"></i>
                     </div>
                 </div>
@@ -65,8 +65,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-12 ">
-                    <a class="nav-link re-pass" href="/">戻る</a>
+                <div class="col-md-12">
+                    <a class="nav-link re-pass other-link" href="/">戻る</a>
                 </div>                    
             </form>
         </div>

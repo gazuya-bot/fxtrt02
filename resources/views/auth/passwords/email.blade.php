@@ -3,7 +3,7 @@
 @section('content')
 <div class="container card-all">
     <div class="card">
-        <h1 class="login">{{ __('form.register.pass_reset') }}</h1>
+        <h1 class="login pass-send">{{ __('form.register.pass_reset') }}</h1>
         <div class="card-body">
 
             @if (session('status'))
@@ -38,7 +38,7 @@
 
                 <!-- 戻るリンク -->
                 <div class="col-md-12 ">
-                    <a class="nav-link re-pass" href="/">戻る</a>
+                    <a class="nav-link re-pass other-link" href="/">戻る</a>
                 </div>    
             </form>
         </div>

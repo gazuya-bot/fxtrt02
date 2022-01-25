@@ -3,16 +3,27 @@ body{color: #fff!important;background-color: #343a40!important;font-family: 'Kos
 /* ヘッダーメニュー */
 .main-header{background-color: #343a40!important;}
 
+/* ヘッダーロゴ */
+.brand-link.brand-image {
+    margin-top: -2px;
+    max-height: 30px;
+    width: 30px;
+    opacity: 1;
+}
+b {
+    letter-spacing: 3px!important;
+}
 /* ログアウトモーダル */
 .btn-block{background-color: #343a40!important;color: #fff!important;}
 
 /* サイドメニュー */
 .fa-bars, .dropdown-toggle, .brand-text b, .nav-link p{color: #fff!important;}
 
-a.nav-link{color: #fff;padding-left: 0!important;padding-right: 0!important;text-align: center;}
+/* a.nav-link{color: #fff;padding-left: 0!important;padding-right: 0!important;text-align: center;} */
 
-i{color: #fff;}
-i:hover{color: #1e90ff;}
+a{color: #fff!important;}
+a.other-link{color: #fff!important;text-align: center;padding-left: 0!important;padding-right: 0!important;}
+a.other-link:hover{color: #1e90ff!important;}
 
 /* メイン背景 */
 .content-wrapper {
@@ -221,7 +232,13 @@ h1.login{margin-bottom: 30px;}
     max-width: 300px;
     margin: 200px auto;
     background-color:transparent!important;
+    height: 100%;
 }
+.card-all {
+    height: 100%;
+}
+
+h1.pass-send{margin-top: 100px;}
 
 /* インプットボックス */
 input.login{background-color: rgb(255, 255, 255, 0.8)!important;margin: 0!important;}
@@ -229,13 +246,16 @@ input.login{background-color: rgb(255, 255, 255, 0.8)!important;margin: 0!import
 .keep-login{margin-bottom: 20px;}
 
 /* 背景画像設定 */
+.py-4 {padding: 0Iimportant;}
+
 main{
     background-image: url("/img_default/FX-logo.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    /* width: 90%; */
+    width: 50%;
     margin: 0 auto;
+    height: 900px;
 }
 
 /* ログインボタン */
