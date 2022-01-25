@@ -81,7 +81,7 @@
 
                     @if (Route::has('password.request'))
                         <a class="nav-link" href="{{ route('password.request') }}">
-                            {{ __('form.register.pass_change') }}
+                            {{ __('form.register.pass_reset_change') }}
                         </a>
                     @endif
                 </div>
