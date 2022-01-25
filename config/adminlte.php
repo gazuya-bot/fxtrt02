@@ -296,8 +296,8 @@ return [
             'text'        => '管理者ログイン',
             'url'         => '/admin/login',
             'icon'        => 'fas fa-lock',
-            'label'       => 'admin',
-            'label_color' => 'warning',
+            // 'label'       => 'admin',
+            // 'label_color' => 'warning',
         ],
 
         // ['header' => 'account_settings'],
