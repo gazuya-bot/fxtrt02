@@ -3,7 +3,7 @@
 @section('content')
 <div class="container card-all">
     <div class="card">
-        <h1 class="login">ログイン</h1>
+        <h1 class="login">FXTRT</h1>
         <div class="card-body">
             <form method="POST" action="{{ route('login') }}">
                 @csrf
