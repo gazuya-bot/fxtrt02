@@ -514,7 +514,7 @@ span.small{font-size: 20px;}
         .check_currency{font-size: 21px;margin-bottom:25px;letter-spacing: 1px;padding-top: 4px;}
         h1{font-size: 25px!important;}
         h2{font-size: 20px!important;padding: 0 0 15px 0;}
-        h3{font-size: 13px!important;padding-top: 10px;}
+        h3{font-size: 14px!important;padding-top: 10px;}
         .welcome-user {font-size: 12px;}
         div.infomation-box-02 {font-size: 12px;}
         div.infomation-box-03 {font-size: 28px;}
@@ -528,7 +528,7 @@ span.small{font-size: 20px;}
         .in-btn{margin: 0;padding-left: 0;}
 
         /* インプットボックスデザイン */
-        .u_line{height: 35px;font-size: 15px;}
+        .u_line{height: 35px;font-size: 16px;}
         /* ユーザー編集不可 */
         .u_line_non{height: 33px;font-size: 15px;}
         
@@ -539,7 +539,7 @@ span.small{font-size: 20px;}
         .all-box{margin: 0;}
 
         /* ボタン */
-        .w-100, .w-75, .w-50 {font-size: 15px!important;padding: 5px!important;vertical-align : top;}
+        .w-100, .w-75, .w-50 {font-size: 10px!important;}
 
 
         /* 全体の位置調整 */
