@@ -38,7 +38,7 @@ class CurrencyController extends Controller
     {
         // バリデーション
         $request->validate([
-            'currency_pair' => 'required|max:10|unique:currencies,currency',
+            'currency_pair' => 'required|max:10',
         ]);
 
         $user_id = Auth::id();
@@ -54,6 +54,10 @@ class CurrencyController extends Controller
             ];
             
             if(isset($btn_submit_01)){
+                // バリデーション
+                $request->validate([
+                    'currency_pair' => 'required|max:10|unique:currencies,currency',
+                ]);
                 Currency::insert($data);
                 session()->flash('msg_success', '追加しました');
                 return redirect('/currency');

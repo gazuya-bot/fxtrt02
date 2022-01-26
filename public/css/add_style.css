@@ -501,11 +501,12 @@ element.style {
     font-size: 18px;
 }
 
-.r-box-title{margin-bottom: 25px!important;}
-
 span.red{color: firebrick;font-size: 35px;margin: 0 3px;}
 span.red_small{color: firebrick;font-size: 25px;margin: 0 3px;}
 span.small{font-size: 20px;}
+
+/* 通貨ペア管理エラー調整 */
+.err-currency{margin: -20px 0 10px 0}
 
 
 /* スマートフォンデザイン */
@@ -564,4 +565,9 @@ span.small{font-size: 20px;}
             margin-left: 11px;
         }
 
+        /* 通貨ペア管理エラー調整 */
+        .err-currency{margin: -45px 0 10px 0}
+        .c-box-title{margin-bottom: 50px!important;}
+
+        .r-box-title{margin-bottom: 30px!important;}
 }

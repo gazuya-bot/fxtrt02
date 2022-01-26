@@ -146,7 +146,9 @@
                 <!-- 画像01 -->
                 <h3 class="in-bottom col-12">チャートイメージ&ensp;01</h3>
                 <div class="col-12 row">
+                    @if(isset($change_data->img_01))0
                     <img class="col-sm-4 img_change" alt="登録なし" src="{{ asset('storage/img_user/' . $change_data->img_01) }}" />
+                    @endif    
                     <div class="col-sm-8"><input id="myImage" type="file" class="in-ans form-control-file" name="img_01" value="{{ asset('storage/img_user/' . $change_data->img_01) }}" accept="image/*"></div>
                 </div>
                 <div class="err-msg offset-3 col-9">
@@ -160,7 +162,9 @@
             <div class="r-box-title col-12 row">
                 <h3 class="in-bottom col-12">チャートイメージ&ensp;02</h3>
                 <div class="col-12 row">
+                    @if(isset($change_data->img_02))
                     <img class="col-sm-4 img_change" alt="登録なし" src="{{ asset('storage/img_user/' . $change_data->img_02) }}" />
+                    @endif
                     <div class="col-sm-8"><input id="myImage" type="file" class="in-ans form-control-file img_change_btn" name="img_02" value="{{ asset('storage/img_user/' . $change_data->img_02) }}" accept="image/*"></div>
                 </div>
                 <div class="err-msg offset-3 col-9">

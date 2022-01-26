@@ -34,7 +34,7 @@
             <div class="in-min col-12 row">
                 <h3 class="col-3">取引数量</h3>
                 <div class="col-9">
-                    <input type="number" class="in-ans form-control u_line" name="trade_num" value="{{old('trade_num')}}">
+                    <input type="number" step="0.01" class="in-ans form-control u_line" name="trade_num" value="{{old('trade_num')}}">
                 </div>
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('trade_num')))
@@ -88,7 +88,7 @@
             <div class="in-min col-12 row">
                 <h3 class="col-3">約定レート</h3>
                 <div class="col-9">
-                    <input type="number" class="in-ans form-control u_line" name="start_rate" value="{{old('start_rate')}}">
+                    <input type="number" step="0.01" class="in-ans form-control u_line" name="start_rate" value="{{old('start_rate')}}">
                 </div>    
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('start_rate')))
@@ -101,7 +101,7 @@
             <div class="in-min col-12 row">
                 <h3 class="col-3">決済レート</h3>
                 <div class="col-9">
-                    <input type="number" class="in-ans form-control u_line" name="end_rate" value="{{old('end_rate')}}">
+                    <input type="number" step="0.01" class="in-ans form-control u_line" name="end_rate" value="{{old('end_rate')}}">
                 </div>    
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('end_rate')))
@@ -114,7 +114,7 @@
             <div class="in-min col-12 row">
                 <h3 class="col-3">損益(pips)</h3>
                 <div class="col-9">
-                    <input type="number" class="in-ans form-control u_line" name="profit_pips" value="{{old('profit_pips')}}">
+                    <input type="number" step="0.01" class="in-ans form-control u_line" name="profit_pips" value="{{old('profit_pips')}}">
                 </div>
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('profit_pips')))
@@ -127,7 +127,7 @@
             <div class="in-min col-12 row">
                 <h3 class="col-3">損益(円)</h3>
                 <div class="col-9">
-                    <input type="number" class="in-ans form-control u_line" name="profit_yen" value="{{old('profit_yen')}}">
+                    <input type="number" step="0.01" class="in-ans form-control u_line" name="profit_yen" value="{{old('profit_yen')}}">
                 </div>
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('profit_yen')))
@@ -145,8 +145,8 @@
                 <!-- 画像01 -->
                 <h3 class="in-bottom col-12">チャートイメージ&ensp;01</h3>
                 <div class="col-12 row">
-                    <img id="preview_01" class="col-4 img_change" alt="イメージ">
-                    <div class="col-8"><input id="myImage_01" type="file" class="in-ans form-control-file" name="img_01" accept="image/*"></div>
+                    <img id="preview_01" class="col-sm-4 img_change" alt="イメージ">
+                    <div class="col-sm-8"><input id="myImage_01" type="file" class="in-ans form-control-file" name="img_01" accept="image/*"></div>
                 </div>
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('img_01')))
@@ -160,8 +160,8 @@
                 <!-- 画像02 -->
                 <h3 class="in-bottom col-12">チャートイメージ&ensp;02</h3>
                 <div class="col-12 row">
-                    <img id="preview_02" class="col-4 img_change"alt="イメージ">
-                    <div class="col-8"><input id="myImage_02" type="file" class="in-ans form-control-file" name="img_02" accept="image/*"></div>
+                    <img id="preview_02" class="col-sm-4 img_change"alt="イメージ">
+                    <div class="col-sm-8"><input id="myImage_02" type="file" class="in-ans form-control-file" name="img_02" accept="image/*"></div>
                 </div>
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('img_02')))

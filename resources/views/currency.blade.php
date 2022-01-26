@@ -12,19 +12,10 @@
     <form method="post" action="/currency_change" class="row">
     @csrf
         <!-- 通貨ペア入力 -->
-        <div class="in-min col-12 row">
+        <div class="in-min c-box-title col-12 row">
             <div class="col-8">
                 <input type="text" class="in-ans form-control u_line" name="currency_pair" placeholder="通貨ペアを入力">
-                <div class="err-msg col-12">
-                    @if(!empty($errors->first('currency_pair')))
-                        <p class="error_message">{{ $errors->first('currency_pair') }}</p>
-                    @endif
-                </div>
             </div>
-
-
-
-
             <!--  登録ボタン -->
             <div class="col-2">
                 <input type="submit" class="btn btn-primary w-100 btn_submit" name="btn_submit_01" value="登録">
@@ -33,6 +24,12 @@
             <div class="col-2">
                 <input type="submit" class="btn btn-danger w-100 btn_submit" name="btn_submit_02" value="削除">
             </div>
+        </div>
+        <!-- エラー表示 -->
+        <div class="err-msg err-currency col-12">
+            @if(!empty($errors->first('currency_pair')))
+                <p class="error_message">{{ $errors->first('currency_pair') }}</p>
+            @endif
         </div>
     </form>
 
