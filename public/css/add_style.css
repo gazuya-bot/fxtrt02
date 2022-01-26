@@ -503,6 +503,10 @@ element.style {
 
 .r-box-title{margin-bottom: 25px!important;}
 
+span.red{color: firebrick;font-size: 35px;margin: 0 3px;}
+span.red_small{color: firebrick;font-size: 25px;margin: 0 3px;}
+span.small{font-size: 20px;}
+
 
 /* スマートフォンデザイン */
 @media screen and (max-width: 480px) {
