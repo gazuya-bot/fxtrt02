@@ -38,17 +38,17 @@ class CurrencyController extends Controller
     {
         // バリデーション
         $request->validate([
-            'currency_pair' => 'required|max:10',
+            'currency_pair' => 'required|max:10|unique:currencies,currency',
         ]);
 
-        $id = Auth::id();
+        $user_id = Auth::id();
         $currency_pair = $request->currency_pair;
         $btn_submit_01 = $request->btn_submit_01;
-        
+
         if($currency_pair != null){
             $data = [
                 'active' => 1,
-                'user_id' => $id,
+                'user_id' => $user_id,
                 'currency' => $currency_pair,
                 'created_at' => date('Y-m-d H:i:s'),
             ];
@@ -58,13 +58,13 @@ class CurrencyController extends Controller
                 session()->flash('msg_success', '追加しました');
                 return redirect('/currency');
             }else{
-                Currency::where('currency', $currency_pair)->update(['active'=>2, 'updated_at'=>now()]);
+                Currency::where('currency', $currency_pair)->delete();
                 session()->flash('msg_warning', '削除しました');
                 return redirect('/currency');
             }
 
         } else {
-            session()->flash('msg_warning', '処理に失敗しました。');
+            session()->flash('msg_warning', 'この通貨ペアは既に登録されています。');
             return redirect('/currency');
         }
     }

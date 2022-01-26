@@ -223,7 +223,7 @@ img.input_img{padding: 0 10% 10% 10%;margin: 0;}
 /* アコーディオン内の画像 */
 img.img_user{width: 90%;margin: 20px 0;}
 /* 投稿編集画面の画像 */
-img.img_change{width: 90%;margin: 0;}
+/* img.img_change{width: 90%;margin: 0;} */
 
 
 /**
@@ -551,5 +551,13 @@ element.style {
             width: 350px;
         }
 
+        /* 備考欄下 */
+        .u-box-title{margin-bottom: 50px!important;}
+
+        /* 投稿編集画面の画像 */
+        img.img_change{width: 100%;margin: 10px 20px;padding: 0;}
+        .form-control-file, .form-control-range {
+            margin-left: 11px;
+        }
 
 }

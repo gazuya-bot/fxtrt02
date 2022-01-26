@@ -145,7 +145,7 @@
                 <!-- 画像01 -->
                 <h3 class="in-bottom col-12">チャートイメージ&ensp;01</h3>
                 <div class="col-12 row">
-                    <img id="preview_01" class="col-4 img_change" alt="選択した画像">
+                    <img id="preview_01" class="col-4 img_change" alt="イメージ">
                     <div class="col-8"><input id="myImage_01" type="file" class="in-ans form-control-file" name="img_01" accept="image/*"></div>
                 </div>
                 <div class="err-msg offset-3 col-9">
@@ -160,7 +160,7 @@
                 <!-- 画像02 -->
                 <h3 class="in-bottom col-12">チャートイメージ&ensp;02</h3>
                 <div class="col-12 row">
-                    <img id="preview_02" class="col-4 img_change">
+                    <img id="preview_02" class="col-4 img_change"alt="イメージ">
                     <div class="col-8"><input id="myImage_02" type="file" class="in-ans form-control-file" name="img_02" accept="image/*"></div>
                 </div>
                 <div class="err-msg offset-3 col-9">
@@ -171,7 +171,7 @@
             </div>
             
             <!-- 備考 -->
-            <div class="in-min col-12 r-box-title">
+            <div class="in-min col-12 r-box-title u-box-title">
                 <h3 class="in-bottom">備考</h3>
                 <div class="">
                     <textarea rows=8 class="in-ans form-control" name="remarks_tech">{{old('remarks_tech')}}</textarea>

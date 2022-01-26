@@ -32,11 +32,6 @@ class HomeController extends Controller
         $w_ago = date('Y-m-d', strtotime('-7 day')); //1週間前 ~ 前日
         $m_ago = date('Y-m-d', strtotime('-30 day')); //1カ月前 ~ 前日 ✖
 
-        // echo $d_ago;
-        // echo $w_ago;
-        // echo $m_ago;
-        // exit;
-
         // 前日のトレード件数
         $d_count = Input::where('active',1)
             ->whereDate('start_day', $d_ago)

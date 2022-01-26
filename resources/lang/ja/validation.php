@@ -111,5 +111,6 @@ return [
 'remarks_tech'=>'備考(テクニカル分析)',
 'password'=>'パスワード',
 'email'=>'このメールアドレス',
+'currency_pair' => '通貨ペア',
 ],
 ];

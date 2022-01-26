@@ -146,8 +146,8 @@
                 <!-- 画像01 -->
                 <h3 class="in-bottom col-12">チャートイメージ&ensp;01</h3>
                 <div class="col-12 row">
-                    <img class="col-4 img_change" alt="登録なし" src="{{ asset('storage/img_user/' . $change_data->img_01) }}" />
-                    <div class="col-8"><input id="myImage" type="file" class="in-ans form-control-file" name="img_01" value="{{ asset('storage/img_user/' . $change_data->img_01) }}" accept="image/*"></div>
+                    <img class="col-sm-4 img_change" alt="登録なし" src="{{ asset('storage/img_user/' . $change_data->img_01) }}" />
+                    <div class="col-sm-8"><input id="myImage" type="file" class="in-ans form-control-file" name="img_01" value="{{ asset('storage/img_user/' . $change_data->img_01) }}" accept="image/*"></div>
                 </div>
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('img_01')))
@@ -160,8 +160,8 @@
             <div class="r-box-title col-12 row">
                 <h3 class="in-bottom col-12">チャートイメージ&ensp;02</h3>
                 <div class="col-12 row">
-                    <img class="col-4 img_change" alt="登録なし" src="{{ asset('storage/img_user/' . $change_data->img_02) }}" />
-                    <div class="col-8"><input id="myImage" type="file" class="in-ans form-control-file" name="img_01" value="{{ asset('storage/img_user/' . $change_data->img_02) }}" accept="image/*"></div>
+                    <img class="col-sm-4 img_change" alt="登録なし" src="{{ asset('storage/img_user/' . $change_data->img_02) }}" />
+                    <div class="col-sm-8"><input id="myImage" type="file" class="in-ans form-control-file img_change_btn" name="img_02" value="{{ asset('storage/img_user/' . $change_data->img_02) }}" accept="image/*"></div>
                 </div>
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('img_02')))
@@ -171,7 +171,7 @@
             </div>
             
             <!-- 備考 -->
-            <div class="r-box-title col-12">
+            <div class="r-box-title u-box-title col-12">
                 <h3 class="in-bottom">備考</h3>
                 <div class="">
                     <textarea rows=7 class="in-ans form-control" name="remarks_tech">{{$change_data->remarks_tech}}</textarea>
@@ -245,5 +245,6 @@
                 toastr.warning('{{ session('msg_warning') }}');
             });
         @endif
-    </script>
+    </script>    
+
 @stop

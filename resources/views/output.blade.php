@@ -84,12 +84,12 @@
 
                         <div class="col-12 row">
                             @if(isset($data->img_01))
-                            <div class="col-6 out_item">
+                            <div class="col-sm-6 out_item">
                                 <img class="img_user" alt="登録なし" src="{{ asset('storage/img_user/' . $data->img_01) }}" />
                             </div>
                             @endif
                             @if(isset($data->img_02))
-                            <div class="col-6 out_item">
+                            <div class="col-sm-6 out_item">
                                 <img class="img_user" alt="登録なし" src="{{ asset('storage/img_user/' . $data->img_02) }}" />
                             </div>
                             @endif
@@ -164,6 +164,33 @@
         // 画面遷移
         location.href = "/output_change/" + data_id;
     }
+    </script>
+
+    <!-- フラッシュメッセージ（toastr） -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <!-- フラッシュメッセージ -->
+    <script>
+        toastr.options = {
+            "positionClass": "toast-top-right",
+            "timeOut": "5000",
+            "closeButton": true,
+            "progressBar": true, 
+        };
+        // 成功（ユーザー設定変更成功）
+        @if (session('msg_success'))
+            $(function () {
+                    toastr.success('{{ session('msg_success') }}');
+            });
+        @endif
+        // 警告（ユーザー設定変更警告）
+        @if (session('msg_warning'))
+            $(function () {
+                toastr.warning('{{ session('msg_warning') }}');
+            });
+        @endif
     </script>
 
 @stop

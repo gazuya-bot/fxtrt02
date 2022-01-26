@@ -52,7 +52,7 @@ class OutputController extends Controller
             'img_01' => 'file|mimes:jpeg,png,jpg|nullable',
             'img_02' => 'file|mimes:jpeg,png,jpg|nullable',
         ]);
-
+            
         if(isset($request->img_01)){
             // name属性が'img_01'のinputタグをファイル形式に、画像をpublic/avatarに保存
             $image_path_01 = $request->file('img_01')->store('public/img_user/');
@@ -70,11 +70,8 @@ class OutputController extends Controller
         }else{
             $img_02 = null;
         }
-        // if(isset($img_01)){
-        //     var_dump($img_01);
-        // }
-        // exit;
 
+        // 入力値取得
         $trade_currency = $request->trade_currency;
         $trade_num = $request->trade_num;
         $buy_sell = $request->buy_sell;
@@ -85,75 +82,112 @@ class OutputController extends Controller
         $profit_pips = $request->profit_pips;
         $profit_yen = $request->profit_yen;
         $remarks_tech = $request->remarks_tech;
-        
-        if(!isset($img_01) && isset($img_02)){
-            $data = [
-                'trade_currency' => $trade_currency,
-                'trade_num' => $trade_num,
-                'buy_sell' => $buy_sell,
-                'start_day' => $start_day,
-                'end_day' => $end_day,
-                'start_rate' => $start_rate,
-                'end_rate' => $end_rate,
-                'profit_pips' => $profit_pips,
-                'profit_yen' => $profit_yen,
-                'remarks_tech' => $remarks_tech,
-                'img_02' => $img_02,
-                'updated_at' => date('Y-m-d H:i:s'),
-            ];
-        }elseif(isset($img_01) && !isset($img_02)){
-            $data = [
-                'trade_currency' => $trade_currency,
-                'trade_num' => $trade_num,
-                'buy_sell' => $buy_sell,
-                'start_day' => $start_day,
-                'end_day' => $end_day,
-                'start_rate' => $start_rate,
-                'end_rate' => $end_rate,
-                'profit_pips' => $profit_pips,
-                'profit_yen' => $profit_yen,
-                'remarks_tech' => $remarks_tech,
-                'img_01' => $img_01,
-                'updated_at' => date('Y-m-d H:i:s'),
-            ];
-        }elseif(!isset($img_01) && !isset($img_02)){
-            $data = [
-                'trade_currency' => $trade_currency,
-                'trade_num' => $trade_num,
-                'buy_sell' => $buy_sell,
-                'start_day' => $start_day,
-                'end_day' => $end_day,
-                'start_rate' => $start_rate,
-                'end_rate' => $end_rate,
-                'profit_pips' => $profit_pips,
-                'profit_yen' => $profit_yen,
-                'remarks_tech' => $remarks_tech,
-                'updated_at' => date('Y-m-d H:i:s'),
-            ];
-        }else{
-            $data = [
-                'trade_currency' => $trade_currency,
-                'trade_num' => $trade_num,
-                'buy_sell' => $buy_sell,
-                'start_day' => $start_day,
-                'end_day' => $end_day,
-                'start_rate' => $start_rate,
-                'end_rate' => $end_rate,
-                'profit_pips' => $profit_pips,
-                'profit_yen' => $profit_yen,
-                'remarks_tech' => $remarks_tech,
-                'img_01' => $img_01,
-                'img_02' => $img_02,
-                'updated_at' => date('Y-m-d H:i:s'),
-            ];
-        }
             
+        // 既存の値取得
+        $base = Input::where('id',$id)->get();
+
+        $base_trade_currency = $base[0]['trade_currency'];
+        $base_trade_num = $base[0]['trade_num'];
+        $base_buy_sell = $base[0]['buy_sell'];
+        $base_start_day = date('Y-m-d\TH:i', strtotime($base[0]['start_day']));
+        $base_end_day = date('Y-m-d\TH:i', strtotime($base[0]['end_day']));
+        $base_start_rate = $base[0]['start_rate'];
+        $base_end_rate = $base[0]['end_rate'];
+        $base_profit_pips = $base[0]['profit_pips'];
+        $base_profit_yen = $base[0]['profit_yen'];
+        $base_remarks_tech = $base[0]['remarks_tech'];
+        $base_img_01 = $base[0]['img_01'];
+        $base_img_02 = $base[0]['img_02'];
+
+        // 変更確認
+        if($base_trade_currency != $trade_currency
+            || $base_trade_num != $trade_num
+            || $base_buy_sell != $buy_sell
+            || $base_start_day != $start_day
+            || $base_end_day != $end_day 
+            || $base_start_rate != $start_rate 
+            || $base_end_rate != $end_rate 
+            || $base_profit_pips != $profit_pips 
+            || $base_profit_yen != $profit_yen
+            || $base_remarks_tech != $remarks_tech
+            || isset($img_01)
+            || isset($img_02)
+        ){
+
+            switch(true){
+                case $img_01 !== null && $img_02 == null:
+                    $data = [
+                        'trade_currency' => $trade_currency,
+                        'trade_num' => $trade_num,
+                        'buy_sell' => $buy_sell,
+                        'start_day' => $start_day,
+                        'end_day' => $end_day,
+                        'start_rate' => $start_rate,
+                        'end_rate' => $end_rate,
+                        'profit_pips' => $profit_pips,
+                        'profit_yen' => $profit_yen,
+                        'remarks_tech' => $remarks_tech,
+                        'img_01' => $img_01,
+                        'updated_at' => date('Y-m-d H:i:s'),
+                    ];
+                    break;
+                case $img_01 == null && $img_02 !== null:
+                    $data = [
+                        'trade_currency' => $trade_currency,
+                        'trade_num' => $trade_num,
+                        'buy_sell' => $buy_sell,
+                        'start_day' => $start_day,
+                        'end_day' => $end_day,
+                        'start_rate' => $start_rate,
+                        'end_rate' => $end_rate,
+                        'profit_pips' => $profit_pips,
+                        'profit_yen' => $profit_yen,
+                        'remarks_tech' => $remarks_tech,
+                        'img_02' => $img_02,
+                        'updated_at' => date('Y-m-d H:i:s'),
+                    ];    
+                    break;
+                case $img_01 !== null && $img_02 !== null:
+                    $data = [
+                        'trade_currency' => $trade_currency,
+                        'trade_num' => $trade_num,
+                        'buy_sell' => $buy_sell,
+                        'start_day' => $start_day,
+                        'end_day' => $end_day,
+                        'start_rate' => $start_rate,
+                        'end_rate' => $end_rate,
+                        'profit_pips' => $profit_pips,
+                        'profit_yen' => $profit_yen,
+                        'remarks_tech' => $remarks_tech,
+                        'img_01' => $img_01,
+                        'img_02' => $img_02,
+                        'updated_at' => date('Y-m-d H:i:s'),
+                    ];    
+                    break;
+                case $img_01 == null && $img_02 == null:
+                    $data = [
+                        'trade_currency' => $trade_currency,
+                        'trade_num' => $trade_num,
+                        'buy_sell' => $buy_sell,
+                        'start_day' => $start_day,
+                        'end_day' => $end_day,
+                        'start_rate' => $start_rate,
+                        'end_rate' => $end_rate,
+                        'profit_pips' => $profit_pips,
+                        'profit_yen' => $profit_yen,
+                        'remarks_tech' => $remarks_tech,
+                        'updated_at' => date('Y-m-d H:i:s'),
+                    ];
+                    break;
+            }
+                
             Input::where('id', $id)->update($data);
             session()->flash('msg_success', '変更しました');
             return redirect('/output');
-        // } else {
-        //     session()->flash('msg_warning', '入力情報は変更されていません。');
-        //     return redirect('/user');
-        // }
+
+        } else {
+            session()->flash('msg_warning', '入力情報は変更されていません。');
+            return redirect('/output_change/' . $id);
+        }
     }
 }
