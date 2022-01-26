@@ -30,7 +30,6 @@ class CreateInputsTable extends Migration
             $table->string("img_01")->nullable();
             $table->string("img_02")->nullable();
             $table->string("remarks_tech")->nullable();
-            $table->string("remarks_funda")->nullable();
             $table->timestamps();
         });
     }

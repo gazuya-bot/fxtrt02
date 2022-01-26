@@ -35,7 +35,7 @@
             </div>
             <!-- 取引数量 -->
             <div class="in-min col-12 row">
-                <div class="col-3">取引数量</div>
+                <h3 class="col-3">取引数量</h3>
                 <div class="col-9">
                     <input type="number" class="in-ans form-control u_line" name="trade_num" value="{{$change_data->trade_num}}">
                 </div>
@@ -47,12 +47,12 @@
             </div>
             <!-- 売買 -->
             <div class="in-min col-12 row">
-                <div class="col-3">売買</div>
+                <h3 class="col-3">売買</h3>
                 <div class="col-9">
                     <select class="in-ans form-control u_line" name="buy_sell">
                         <option value="{{$change_data->buy_sell}}">{{$change_data->buy_sell}}</option>
-                        <option value="buy" @if(old('buy_sell')=="buy")selected @endif>買い</option>
-                        <option value="sell" @if(old('buy_sell')=="sell")selected @endif>売り</option>
+                        <option value="buy" @if(old('buy_sell')=="buy")selected @endif>buy</option>
+                        <option value="sell" @if(old('buy_sell')=="sell")selected @endif>sell</option>
                     </select>
                 </div>
                 <div class="err-msg offset-3 col-9">
@@ -63,7 +63,7 @@
             </div>
             <!-- 約定日時 -->
             <div class="in-min col-12 row">
-                <div class="col-3">約定日時</div>
+                <h3 class="col-3">約定日時</h3>
                 <div class="col-9">
                     <input type="datetime-local" class="in-ans form-control u_line" name="start_day" value="{!! date('Y-m-d\TH:i', strtotime($change_data->start_day)) !!}">
                 </div>
@@ -76,7 +76,7 @@
 
             <!-- 決済日時 -->
             <div class="in-min col-12 row">
-                <div class="col-3">決済日時</div>
+                <h3 class="col-3">決済日時</h3>
                 <div class="col-9">
                     <input type="datetime-local" class="in-ans form-control u_line" name="end_day" value="{!! date('Y-m-d\TH:i', strtotime($change_data->end_day)) !!}">
                 </div>
@@ -89,7 +89,7 @@
 
             <!-- 約定レート -->
             <div class="in-min col-12 row">
-                <div class="col-3">約定レート</div>
+                <h3 class="col-3">約定レート</h3>
                 <div class="col-9">
                     <input type="number" class="in-ans form-control u_line" name="start_rate" value="{{$change_data->start_rate}}">
                 </div>    
@@ -102,7 +102,7 @@
 
             <!-- 決済レート -->
             <div class="in-min col-12 row">
-                <div class="col-3">決済レート</div>
+                <h3 class="col-3">決済レート</h3>
                 <div class="col-9">
                     <input type="number" class="in-ans form-control u_line" name="end_rate" value="{{$change_data->end_rate}}">
                 </div>    
@@ -115,7 +115,7 @@
 
             <!-- 損益(pips) -->
             <div class="in-min col-12 row">
-                <div class="col-3">損益(pips)</div>
+                <h3 class="col-3">損益(pips)</h3>
                 <div class="col-9">
                     <input type="number" class="in-ans form-control u_line" name="profit_pips" value="{{$change_data->profit_pips}}">
                 </div>
@@ -128,7 +128,7 @@
 
             <!--  損益(円) -->
             <div class="in-min col-12 row">
-                <div class="col-3">損益(円)</div>
+                <h3 class="col-3">損益(円)</h3>
                 <div class="col-9">
                     <input type="number" class="in-ans form-control u_line" name="profit_yen" value="{{$change_data->profit_yen}}">
                 </div>
@@ -142,14 +142,12 @@
         
         <!-- 右側 -->
         <div class="right-box col-md-6 row">
-            <!-- 画像01 -->
-            <div class="in-min col-12 row">
-                <div class="col-3">
-                    <p>チャート01</p>
-                    <img class="img_change" alt="登録なし" src="{{ asset('storage/img_user/' . $change_data->img_01) }}" />
-                </div>
-                <div class="col-9">
-                    <input type="file" class="in-ans form-control-file" name="img_01" accept="image/*" multiple>
+            <div class="r-box-title col-12 row">
+                <!-- 画像01 -->
+                <h3 class="in-bottom col-12">チャートイメージ&ensp;01</h3>
+                <div class="col-12 row">
+                    <img class="col-4 img_change" alt="登録なし" src="{{ asset('storage/img_user/' . $change_data->img_01) }}" />
+                    <div class="col-8"><input id="myImage" type="file" class="in-ans form-control-file" name="img_01" value="{{ asset('storage/img_user/' . $change_data->img_01) }}" accept="image/*"></div>
                 </div>
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('img_01')))
@@ -157,14 +155,13 @@
                     @endif
                 </div>
             </div>
+                
             <!-- 画像02 -->
-            <div class="in-min col-12 row">
-                <div class="col-3">
-                    <p>チャート02</p>
-                    <img class="img_change" alt="登録なし" src="{{ asset('storage/img_user/' . $change_data->img_02) }}" />
-                </div>
-                <div class="col-9">
-                    <input type="file" class="in-ans form-control-file" name="img_02" accept="image/*" multiple>
+            <div class="r-box-title col-12 row">
+                <h3 class="in-bottom col-12">チャートイメージ&ensp;02</h3>
+                <div class="col-12 row">
+                    <img class="col-4 img_change" alt="登録なし" src="{{ asset('storage/img_user/' . $change_data->img_02) }}" />
+                    <div class="col-8"><input id="myImage" type="file" class="in-ans form-control-file" name="img_01" value="{{ asset('storage/img_user/' . $change_data->img_02) }}" accept="image/*"></div>
                 </div>
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('img_02')))
@@ -173,11 +170,11 @@
                 </div>
             </div>
             
-            <!-- 備考（テクニカル分析） -->
-            <div class="in-min col-12">
-                <div class="">備考（テクニカル分析）</div>
+            <!-- 備考 -->
+            <div class="r-box-title col-12">
+                <h3 class="in-bottom">備考</h3>
                 <div class="">
-                    <textarea rows=8 class="in-ans form-control" name="remarks_tech">{{$change_data->remarks_tech}}</textarea>
+                    <textarea rows=7 class="in-ans form-control" name="remarks_tech">{{$change_data->remarks_tech}}</textarea>
                 </div>
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('remarks_tech')))
@@ -185,20 +182,6 @@
                     @endif
                 </div>
             </div>
-
-            <!-- 備考（ファンダメンタル分析） -->
-            <div class="in-min col-12">
-                <div class="">備考（ファンダメンタル分析）</div>
-                <div class="">
-                    <textarea rows=8 class="in-ans form-control" name="remarks_funda">{{$change_data->remarks_funda}}</textarea>
-                </div>
-            </div>
-            <div class="err-msg offset-3 col-9">
-                @if(!empty($errors->first('remarks_funda')))
-                    <p class="error_message">{{ $errors->first('remarks_funda') }}</p>
-                @endif
-            </div>
-        </div>
 
         <!--  完了ボタン -->
         <div class="in-btn col-6">

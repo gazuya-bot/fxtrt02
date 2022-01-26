@@ -20,7 +20,7 @@ class OutputController extends Controller
     // 投稿削除
     public function delete($id)
     {
-        Input::where('id', $id)->update(['active'=>0, 'updated_at'=>now()]);
+        Input::where('id', $id)->delete();
         return redirect('/output');
     }
 
@@ -30,6 +30,7 @@ class OutputController extends Controller
         $user_id = Auth::id();
         // $change_data = Input::where('user_id', $user_id)->where('id', $id)->get();
         $change_data = Input::where('user_id', $user_id)->find($id);
+        
         return view('output_change', compact('change_data'));
     }
 
@@ -48,10 +49,31 @@ class OutputController extends Controller
             'profit_pips' => 'required|numeric',
             'profit_yen' => 'numeric|nullable',
             'remarks_tech' => 'max:1000|nullable',
-            'remarks_funda' => 'max:1000|nullable',
             'img_01' => 'file|mimes:jpeg,png,jpg|nullable',
             'img_02' => 'file|mimes:jpeg,png,jpg|nullable',
         ]);
+
+        if(isset($request->img_01)){
+            // name属性が'img_01'のinputタグをファイル形式に、画像をpublic/avatarに保存
+            $image_path_01 = $request->file('img_01')->store('public/img_user/');
+            // 保存した画像に名前を付け、DBへ格納
+            $img_01 = basename($image_path_01);
+        }else{
+            $img_01 = null;
+        }
+
+        if(isset($request->img_02)){
+            // name属性が'img_02'のinputタグをファイル形式に、画像をpublic/avatarに保存
+            $image_path_02 = $request->file('img_02')->store('public/img_user/');
+            // 保存した画像に名前を付け、DBへ格納
+            $img_02 = basename($image_path_02);
+        }else{
+            $img_02 = null;
+        }
+        // if(isset($img_01)){
+        //     var_dump($img_01);
+        // }
+        // exit;
 
         $trade_currency = $request->trade_currency;
         $trade_num = $request->trade_num;
@@ -63,12 +85,8 @@ class OutputController extends Controller
         $profit_pips = $request->profit_pips;
         $profit_yen = $request->profit_yen;
         $remarks_tech = $request->remarks_tech;
-        $remarks_funda = $request->remarks_funda;
-        $img_01 = $request->img_01;
-        $img_02 = $request->img_02;
-
         
-        // if($name_base != $name || $email_base != $email){
+        if(!isset($img_01) && isset($img_02)){
             $data = [
                 'trade_currency' => $trade_currency,
                 'trade_num' => $trade_num,
@@ -80,11 +98,55 @@ class OutputController extends Controller
                 'profit_pips' => $profit_pips,
                 'profit_yen' => $profit_yen,
                 'remarks_tech' => $remarks_tech,
-                'remarks_funda' => $remarks_funda,
+                'img_02' => $img_02,
+                'updated_at' => date('Y-m-d H:i:s'),
+            ];
+        }elseif(isset($img_01) && !isset($img_02)){
+            $data = [
+                'trade_currency' => $trade_currency,
+                'trade_num' => $trade_num,
+                'buy_sell' => $buy_sell,
+                'start_day' => $start_day,
+                'end_day' => $end_day,
+                'start_rate' => $start_rate,
+                'end_rate' => $end_rate,
+                'profit_pips' => $profit_pips,
+                'profit_yen' => $profit_yen,
+                'remarks_tech' => $remarks_tech,
+                'img_01' => $img_01,
+                'updated_at' => date('Y-m-d H:i:s'),
+            ];
+        }elseif(!isset($img_01) && !isset($img_02)){
+            $data = [
+                'trade_currency' => $trade_currency,
+                'trade_num' => $trade_num,
+                'buy_sell' => $buy_sell,
+                'start_day' => $start_day,
+                'end_day' => $end_day,
+                'start_rate' => $start_rate,
+                'end_rate' => $end_rate,
+                'profit_pips' => $profit_pips,
+                'profit_yen' => $profit_yen,
+                'remarks_tech' => $remarks_tech,
+                'updated_at' => date('Y-m-d H:i:s'),
+            ];
+        }else{
+            $data = [
+                'trade_currency' => $trade_currency,
+                'trade_num' => $trade_num,
+                'buy_sell' => $buy_sell,
+                'start_day' => $start_day,
+                'end_day' => $end_day,
+                'start_rate' => $start_rate,
+                'end_rate' => $end_rate,
+                'profit_pips' => $profit_pips,
+                'profit_yen' => $profit_yen,
+                'remarks_tech' => $remarks_tech,
                 'img_01' => $img_01,
                 'img_02' => $img_02,
                 'updated_at' => date('Y-m-d H:i:s'),
             ];
+        }
             
             Input::where('id', $id)->update($data);
             session()->flash('msg_success', '変更しました');

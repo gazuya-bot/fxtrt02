@@ -140,10 +140,13 @@
         <!-- 右側 -->
         <div class="right-box col-md-6 row">
             <!-- 画像01 -->
-            <div class="in-min col-12 row">
-                <h3 class="col-3">チャート01</h3>
-                <div class="col-9">
-                    <input type="file" class="in-ans form-control-file" name="img_01" accept="image/*" multiple>
+
+            <div class="r-box-title col-12 row">
+                <!-- 画像01 -->
+                <h3 class="in-bottom col-12">チャートイメージ&ensp;01</h3>
+                <div class="col-12 row">
+                    <img id="preview_01" class="col-4 img_change" alt="選択した画像">
+                    <div class="col-8"><input id="myImage_01" type="file" class="in-ans form-control-file" name="img_01" accept="image/*"></div>
                 </div>
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('img_01')))
@@ -151,11 +154,14 @@
                     @endif
                 </div>
             </div>
+
             <!-- 画像02 -->
-            <div class="in-min col-12 row">
-                <h3 class="col-3">チャート02</h3>
-                <div class="col-9">
-                    <input type="file" class="in-ans form-control-file" name="img_02" accept="image/*" multiple>
+            <div class="r-box-title col-12 row">
+                <!-- 画像02 -->
+                <h3 class="in-bottom col-12">チャートイメージ&ensp;02</h3>
+                <div class="col-12 row">
+                    <img id="preview_02" class="col-4 img_change">
+                    <div class="col-8"><input id="myImage_02" type="file" class="in-ans form-control-file" name="img_02" accept="image/*"></div>
                 </div>
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('img_02')))
@@ -164,9 +170,9 @@
                 </div>
             </div>
             
-            <!-- 備考（テクニカル分析） -->
-            <div class="in-min col-12">
-                <h3 class="">備考（テクニカル分析）</h3>
+            <!-- 備考 -->
+            <div class="in-min col-12 r-box-title">
+                <h3 class="in-bottom">備考</h3>
                 <div class="">
                     <textarea rows=8 class="in-ans form-control" name="remarks_tech">{{old('remarks_tech')}}</textarea>
                 </div>
@@ -176,20 +182,6 @@
                     @endif
                 </div>
             </div>
-
-            <!-- 備考（ファンダメンタル分析） -->
-            <div class="in-min col-12">
-                <h3 class="">備考（ファンダメンタル分析）</h3>
-                <div class="">
-                    <textarea rows=8 class="in-ans form-control" name="remarks_funda">{{old('remarks_funda')}}</textarea>
-                </div>
-            </div>
-            <div class="err-msg offset-3 col-9">
-                @if(!empty($errors->first('remarks_funda')))
-                    <p class="error_message">{{ $errors->first('remarks_funda') }}</p>
-                @endif
-            </div>
-        </div>
 
         <!--  完了ボタン -->
         <div class="in-btn col-6">
@@ -257,5 +249,23 @@
                 toastr.warning('{{ session('msg_warning') }}');
             });
         @endif
+    </script>
+
+        <!-- インプットボックス画像表示 -->
+    <script>
+        $('#myImage_01').on('change', function (e) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $("#preview_01").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(e.target.files[0]);
+        });
+        $('#myImage_02').on('change', function (e) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $("#preview_02").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(e.target.files[0]);
+        });
     </script>
 @stop

@@ -13,7 +13,8 @@ class InputController extends Controller
     // 入力画面へ遷移
     public function input()
     {
-        $currency_act = Currency::where('active',1)->orderby('id','asc')->get();
+        $user_id = Auth::id();
+        $currency_act = Currency::where('active',1)->where('user_id', $user_id)->orderby('currency','asc')->get();
         return view('input', compact('currency_act'));
     }
 
@@ -34,7 +35,6 @@ class InputController extends Controller
                 'profit_pips' => 'required|numeric',
                 'profit_yen' => 'numeric|nullable',
                 'remarks_tech' => 'max:1000|nullable',
-                'remarks_funda' => 'max:1000|nullable',
                 'img_01' => 'file|mimes:jpeg,png,jpg|nullable',
                 'img_02' => 'file|mimes:jpeg,png,jpg|nullable',
             ]);
@@ -68,7 +68,6 @@ class InputController extends Controller
             $profit_pips = $request->profit_pips;
             $profit_yen = $request->profit_yen;
             $remarks_tech = $request->remarks_tech;
-            $remarks_funda = $request->remarks_funda;
 
             // 勝敗
             if($profit_pips >= 0){
@@ -93,7 +92,6 @@ class InputController extends Controller
                 'img_01' => $img_01,
                 'img_02' => $img_02,
                 'remarks_tech' => $remarks_tech,
-                'remarks_funda' => $remarks_funda,
                 'created_at' => date('Y-m-d H:i:s'),
             ];
             

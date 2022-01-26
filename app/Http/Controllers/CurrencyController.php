@@ -43,6 +43,7 @@ class CurrencyController extends Controller
 
         $id = Auth::id();
         $currency_pair = $request->currency_pair;
+        $btn_submit_01 = $request->btn_submit_01;
         
         if($currency_pair != null){
             $data = [
@@ -52,11 +53,18 @@ class CurrencyController extends Controller
                 'created_at' => date('Y-m-d H:i:s'),
             ];
             
-            Currency::insert($data);
-            session()->flash('msg_success', '追加しました');
-            return redirect('/currency');
+            if(isset($btn_submit_01)){
+                Currency::insert($data);
+                session()->flash('msg_success', '追加しました');
+                return redirect('/currency');
+            }else{
+                Currency::where('currency', $currency_pair)->update(['active'=>2, 'updated_at'=>now()]);
+                session()->flash('msg_warning', '削除しました');
+                return redirect('/currency');
+            }
+
         } else {
-            session()->flash('msg_warning', '追加に失敗しました。');
+            session()->flash('msg_warning', '処理に失敗しました。');
             return redirect('/currency');
         }
     }

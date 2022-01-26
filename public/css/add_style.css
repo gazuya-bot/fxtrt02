@@ -61,7 +61,8 @@ h3{font-size: 18px!important;
 }
 
 /* 入力画面 */
-div.in-min{margin-bottom: 23px;font-weight: bold;}
+div.in-min{margin-bottom: 23px;}
+.in-bottom{padding-bottom: 5px;}
 
 /* 入力・選択項目 */
 input.in-ans, select.in-ans, textarea.in-ans{
@@ -82,6 +83,8 @@ input.in-ans:hover, select.in-ans:hover, textarea.in-ans:hover{
     overflow-wrap: break-word;
     font-size: 18px;
 }
+
+
 
 .out_item_img{margin: 30px 0;}
 
@@ -208,6 +211,7 @@ img.input_img{padding: 0 10% 10% 10%;margin: 0;}
         margin-top: -24px;
     }
     .out_item{font-size:14px;}
+
 }  
 @media screen and (max-width: 465px) {
     .s_02 .accordion_one .accordion_header .i_box {
@@ -486,6 +490,18 @@ element.style {
     border-color: none;
 }
 
+/* 出力画面項目 */
+.out_title{text-align: right!important;}
+.out_line{
+    border-bottom: solid 1px #fff;
+    /* padding: 10px 0; */
+    box-shadow: 0px 5px 0px 0px #333333;
+    /* padding-bottom: 10px; */
+    overflow-wrap: break-word;
+    font-size: 18px;
+}
+
+.r-box-title{margin-bottom: 25px!important;}
 
 
 /* スマートフォンデザイン */
@@ -503,7 +519,7 @@ element.style {
         /* 時間のスタイル */
         .clock-time {font-size: 50px; margin: 5px 0 5px 0;}
         .in-ans{font-size: 13px;}
-        .in-min {padding: 0;margin: 10px 0 0 0;}
+        .in-min {padding: 0;margin: 0;}
         .right-box{padding: 5px;}
         .in-btn{margin: 0;padding-left: 0;}
 
@@ -516,6 +532,10 @@ element.style {
             padding: 5px 0;
         }
 
+        .all-box{margin: 0;}
+
+        /* ボタン */
+        .w-100, .w-75, .w-50 {font-size: 12px!important;}
 
 
         /* 全体の位置調整 */

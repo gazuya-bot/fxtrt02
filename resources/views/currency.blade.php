@@ -13,35 +13,42 @@
     @csrf
         <!-- 取引数量 -->
         <div class="in-min col-12 row">
-            <div class="col-9">
-                <input type="text" class="in-ans form-control u_line" name="currency_pair" placeholder="トレードに使用する通貨ペアを入力">
+            <div class="col-8">
+                <input type="text" class="in-ans form-control u_line" name="currency_pair" placeholder="通貨ペアを入力">
             </div>
             <!--  登録ボタン -->
-            <div class="col-3">
-                <input type="submit" class="btn btn-primary w-75 btn_submit" name="btn_submit_01" value="登録">
+            <div class="col-2">
+                <input type="submit" class="btn btn-primary w-100 btn_submit" name="btn_submit_01" value="登録">
+            </div>
+            <!--  削除ボタン -->
+            <div class="col-2">
+                <input type="submit" class="btn btn-danger w-100 btn_submit" name="btn_submit_02" value="削除">
             </div>
         </div>
     </form>
 
 
     <div class="all-box col-12 row">
+        @if(isset($currency_act))
         <div class="col-12 row">
-            <h2 class="col-12">現在設定中</h2>
+            <h2 class="col-12">現在表示中</h2>
             @foreach($currency_act as $data)
                 <div class="col-3 check_currency">{{ $data->currency }}</div>
-                <div class="col-3"><button class="btn btn-danger w-75 btn_submit" onclick="currency_delete('{{ $data->id }}')"><i class="fas fa-trash-alt"></i></button></div>
+                <div class="col-3"><button class="btn btn-warning w-75 btn_submit" onclick="currency_delete('{{ $data->id }}')"><i class="fas fa-eye-slash"></i></i></button></div>
             @endforeach
         </div>
+        @endif
         
-        <!-- 右側 -->
+        @if(isset($currency_del))
         <div class="col-12 row">
             <h2 class="col-12">非表示中</h2>
                 @foreach($currency_del as $data)
                     <div class="col-3 check_currency">{{ $data->currency }}</div>
-                    <div class="col-3"><button class="btn btn-primary w-75 btn_submit" onclick="currency_change('{{ $data->id }}')"><i class="fas fa-trash-restore-alt"></i></button></div>
+                    <div class="col-3"><button class="btn btn-primary w-75 btn_submit" onclick="currency_change('{{ $data->id }}')"><i class="fas fa-eye"></i></button></div>
                 @endforeach
             </div>
         </div>
+        @endif
     </div>
 
 </div>

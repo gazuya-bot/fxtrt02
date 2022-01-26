@@ -75,27 +75,29 @@
                             <div class="col-4 out_item">損益（円）</div>
                             <div class="col-8 out_item">{{ $data->profit_yen }}</div>
                         </div>
+                        @if(isset($data->remarks_tech))
                         <div class="col-12 row">
-                            <div class="col-4 out_item">備考（テクニカル）</div>
+                            <div class="col-4 out_item">備考</div>
                             <div class="col-8 out_item">{{ $data->remarks_tech }}</div>
                         </div>
+                        @endif
+
                         <div class="col-12 row">
-                            <div class="col-4 out_item">備考（ファンダメンタル）</div>
-                            <div class="col-8 out_item">{{ $data->remarks_funda }}</div>
-                        </div>
-                        <div class="col-12 row">
+                            @if(isset($data->img_01))
                             <div class="col-6 out_item">
                                 <img class="img_user" alt="登録なし" src="{{ asset('storage/img_user/' . $data->img_01) }}" />
                             </div>
+                            @endif
+                            @if(isset($data->img_02))
                             <div class="col-6 out_item">
                                 <img class="img_user" alt="登録なし" src="{{ asset('storage/img_user/' . $data->img_02) }}" />
                             </div>
+                            @endif
                         </div>
 
 
                         <div class="in-btn col-6">
                             <button class="btn btn-primary w-100 btn_submit user-btn" onclick="data_change('{{ $data->id }}')">編集</button>
-                            <!-- <a href="/output_change"><button class="btn btn-primary w-100 btn_submit">編集</button></a> -->
                         </div>
                         <div class="in-btn col-6">
                             <button class="btn btn-danger w-100 btn_submit user-btn" onclick="data_delete('{{ $data->id }}')">削除</button>
@@ -147,7 +149,7 @@
     <script>
     function data_delete(id){
         var data_id = id
-        if(window.confirm('削除しますか')){
+        if(window.confirm('削除しますか？')){
             alert('削除しました。');
             // 画面遷移
             location.href = "/data_delete/" + data_id;
