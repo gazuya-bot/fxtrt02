@@ -539,7 +539,7 @@ span.small{font-size: 20px;}
         .all-box{margin: 0;}
 
         /* ボタン */
-        .w-100, .w-75, .w-50 {font-size: 12px!important;}
+        .w-100, .w-75, .w-50 {font-size: 15px!important;padding: 5px!important;}
 
 
         /* 全体の位置調整 */
