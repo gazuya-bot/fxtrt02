@@ -40,13 +40,7 @@
                         </div>
                         <div class="col-12 row">
                             <div class="col-4 out_item">売り買い</div>
-                            @if($data->buy_sell == "buy")
-                                <div class="col-8 out_item">買い</div>
-                            @elseif($data->buy_sell == "sell")
-                                <div class="col-8 out_item">売り</div>
-                            @else
-                                <div class="col-8 err_msg out_item">※エラーが発生しました。</div>
-                            @endif
+                            <div class="col-8 out_item">{{ ($data->buy_sell) }}</div>
                         </div>
                         <div class="col-12 row">
                             <div class="col-4 out_item">約定日時</div>

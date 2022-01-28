@@ -20,7 +20,7 @@
                     <select class="in-ans form-control u_line" id="trade_currency" name="trade_currency" value="{{old('trade_currency')}}">
                         <option value=""></option>
                         @foreach($currency_act as $data)
-                            <option value={{ $data->currency }} >{{ $data->currency }}</option>
+                            <option value={{ $data->currency }}>{{ $data->currency }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -48,8 +48,8 @@
                 <div class="col-9">
                     <select class="in-ans form-control u_line" name="buy_sell">
                         <option value=""></option>
-                        <option value="buy" @if(old('buy_sell')=="buy")selected @endif>買い</option>
-                        <option value="sell" @if(old('buy_sell')=="sell")selected @endif>売り</option>
+                        <option value="買い" @if(old('buy_sell')=="買い")selected @endif>買い</option>
+                        <option value="売り" @if(old('buy_sell')=="売り")selected @endif>売り</option>
                     </select>
                 </div>
                 <div class="err-msg offset-3 col-9">
