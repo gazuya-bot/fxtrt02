@@ -37,7 +37,7 @@
             <div class="in-min col-12 row">
                 <h3 class="col-3">取引数量</h3>
                 <div class="col-9">
-                    <input type="number" class="in-ans form-control u_line" name="trade_num" value="{{$change_data->trade_num}}">
+                    <input type="number" step="0.01" class="in-ans form-control u_line" name="trade_num" value="{{round($change_data->trade_num, 2)}}">
                 </div>
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('trade_num')))
@@ -91,7 +91,7 @@
             <div class="in-min col-12 row">
                 <h3 class="col-3">約定レート</h3>
                 <div class="col-9">
-                    <input type="number" class="in-ans form-control u_line" name="start_rate" value="{{$change_data->start_rate}}">
+                    <input type="number" step="0.01" class="in-ans form-control u_line" name="start_rate" value="{{round($change_data->start_rate,2)}}">
                 </div>    
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('start_rate')))
@@ -104,7 +104,7 @@
             <div class="in-min col-12 row">
                 <h3 class="col-3">決済レート</h3>
                 <div class="col-9">
-                    <input type="number" class="in-ans form-control u_line" name="end_rate" value="{{$change_data->end_rate}}">
+                    <input type="number" step="0.01" class="in-ans form-control u_line" name="end_rate" value="{{round($change_data->end_rate,2)}}">
                 </div>    
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('end_rate')))
@@ -117,7 +117,7 @@
             <div class="in-min col-12 row">
                 <h3 class="col-3">損益(pips)</h3>
                 <div class="col-9">
-                    <input type="number" class="in-ans form-control u_line" name="profit_pips" value="{{$change_data->profit_pips}}">
+                    <input type="number" step="0.01" class="in-ans form-control u_line" name="profit_pips" value="{{round($change_data->profit_pips,2)}}">
                 </div>
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('profit_pips')))
@@ -146,10 +146,10 @@
                 <!-- 画像01 -->
                 <h3 class="in-bottom col-12">チャートイメージ&ensp;01</h3>
                 <div class="col-12 row">
-                    @if(isset($change_data->img_01))0
-                    <img class="col-sm-4 img_change" alt="登録なし" src="{{ asset('storage/img_user/' . $change_data->img_01) }}" />
+                    @if(isset($change_data->img_01))
+                    <img class="col-sm-12 img_change" alt="登録なし" src="{{ asset('storage/img_user/' . $change_data->img_01) }}" />
                     @endif    
-                    <div class="col-sm-8"><input id="myImage" type="file" class="in-ans form-control-file" name="img_01" value="{{ asset('storage/img_user/' . $change_data->img_01) }}" accept="image/*"></div>
+                    <div class="col-sm-12"><input id="myImage" type="file" class="in-ans form-control-file" name="img_01" value="{{ asset('storage/img_user/' . $change_data->img_01) }}" accept="image/*"></div>
                 </div>
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('img_01')))
@@ -163,9 +163,9 @@
                 <h3 class="in-bottom col-12">チャートイメージ&ensp;02</h3>
                 <div class="col-12 row">
                     @if(isset($change_data->img_02))
-                    <img class="col-sm-4 img_change" alt="登録なし" src="{{ asset('storage/img_user/' . $change_data->img_02) }}" />
+                    <img class="col-sm-12 img_change" alt="登録なし" src="{{ asset('storage/img_user/' . $change_data->img_02) }}" />
                     @endif
-                    <div class="col-sm-8"><input id="myImage" type="file" class="in-ans form-control-file img_change_btn" name="img_02" value="{{ asset('storage/img_user/' . $change_data->img_02) }}" accept="image/*"></div>
+                    <div class="col-sm-12"><input id="myImage" type="file" class="in-ans form-control-file img_change_btn" name="img_02" value="{{ asset('storage/img_user/' . $change_data->img_02) }}" accept="image/*"></div>
                 </div>
                 <div class="err-msg offset-3 col-9">
                     @if(!empty($errors->first('img_02')))

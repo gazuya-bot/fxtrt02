@@ -9,17 +9,17 @@
 @section('content')
 
 <div class="all-box container-fluid">
-    <div class="row">
+    <div class="row search-box">
         <!-- 検索 -->
-
-        <form class="in-min col-12 row text-center" method="GET" action="">
-            <div class="col-9"><input class="in-ans form-control" type="search" placeholder="検索キーワードを入力" name="search" value="@if (isset($search)) {{ $search }} @endif"></div>
-            <div class="col-3"><button class="btn btn-secondary" type="submit">検索</button></div>
+        <form class="in-min col-12 row text-center" method="GET">
+            <div class="col-9">
+                <input value="{{request('search')}}" class="in-ans form-control" type="search" placeholder="検索キーワードを入力" name="search">
+            </div>
+            <div class="col-3">
+                <input type="submit" value="検索" class="btn btn-secondary w-100">
+            </div>
         </form>
-
-
     </div>
-
     
     @foreach($input_data as $data)
         <div class="section s_02">
@@ -108,7 +108,8 @@
         </div>
     @endforeach
     
-    <div class="pagenation">{{ $input_data->links('pagination::bootstrap-4') }}</div>
+    <div class="pagenation">{{ $input_data->appends(request()->query())->links() }}</div>
+    <!-- <div class="pagenation">{{ $input_data->links('pagination::bootstrap-4') }}</div> -->
     
 </div>
 

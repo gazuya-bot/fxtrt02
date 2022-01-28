@@ -9,11 +9,36 @@ use Illuminate\Support\Facades\Auth;
 
 class OutputController extends Controller
 {
-    //
+
+
+
+    //出力画面表示・検索（１つのキーワードのみ）sum ver
     public function output()
     {
         $user_id = Auth::id();
-        $input_data = Input::where('active',1)->where('user_id', $user_id)->orderby('id','desc')->paginate(20);
+
+        $input_data = Input::where('active',1)->where('user_id', $user_id)->orderby('id','desc')->where(function ($query) {
+        
+            // 検索キーワードを置換
+            $search = request('search');
+
+            // 全角スペースを半角に変換
+            $spaceConversion = mb_convert_kana($search, 's');
+
+            // 単語を半角スペースで区切り、配列にキーワードを代入する（例："A B" → ["A", "B"]）
+            $wordArraySearched = preg_split('/[\s,]+/', $spaceConversion, -1, PREG_SPLIT_NO_EMPTY);
+            
+            // 検索キーワードが入力されたら
+            if ($search) {
+                foreach($wordArraySearched as $value) {
+                    $query->where('win_lose', 'LIKE', "%{$value}%")
+                            ->orWhere('trade_currency','LIKE',"%{$value}%")
+                            ->orWhere('buy_sell','LIKE',"%{$value}%")
+                            ->orWhere('remarks_tech','LIKE',"%{$value}%");
+                }
+            }
+        })->paginate(10);
+
         return view('output', compact('input_data'));
     }
 
@@ -24,17 +49,15 @@ class OutputController extends Controller
         return redirect('/output');
     }
 
-    // 投稿内容編集画面
+    // 投稿編集画面
     public function change($id)
     {
         $user_id = Auth::id();
-        // $change_data = Input::where('user_id', $user_id)->where('id', $id)->get();
         $change_data = Input::where('user_id', $user_id)->find($id);
-        
         return view('output_change', compact('change_data'));
     }
 
-    // 変更データ書き込み
+    // 投稿データ変更
     public function input_change(Request $request, $id)
     {
         // バリデーション

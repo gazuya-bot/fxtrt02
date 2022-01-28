@@ -92,12 +92,10 @@
         <div class="home-box-01 col-md-12 row">
             <div class="home-box-02 col-12 row">
                 <h2 class="infomation-box_ col-12">お知らせ</h2>
-                <div class="infomation-box-02 col-sm-3 info-title">2022年01月05日</div>
-                <div class="infomation-box-02 col-sm-9">このツールをLaravelへ移行作業開始しました。</div>
-                <div class="infomation-box-02 col-sm-3 info-title">2022年01月05日</div>
-                <div class="infomation-box-02 col-sm-9">このツールをLaravelへ移行作業開始しました。</div>
                 <div class="infomation-box-02 col-sm-3 info-title">2022年01月20日</div>
                 <div class="infomation-box-02 col-sm-9">サーバへ公開しました</div>
+                <div class="infomation-box-02 col-sm-3 info-title">2022年01月24日</div>
+                <div class="infomation-box-02 col-sm-9">通貨ペア管理機能を実装しました。</div>
             </div>
         </div>
 
@@ -105,7 +103,7 @@
         <div class="home-box-01 col-md-12 row">
             <div class="home-box-02 col-12 row">
                 <h2 class="infomation-box_ col-12">実装予定</h2>
-                <div class="infomation-box-02 col-sm-3 info-title">2022年02月10日</div>
+                <div class="infomation-box-02 col-sm-3 info-title">2022年02月15日</div>
                 <div class="infomation-box-02 col-sm-9">グラフ表示による可視化の向上（一般ユーザー向け）</div>
                 <div class="infomation-box-02 col-sm-3 info-title">2022年02月28日</div>
                 <div class="infomation-box-02 col-sm-9">   ユーザー管理画面の追加（管理者向け）</div>
