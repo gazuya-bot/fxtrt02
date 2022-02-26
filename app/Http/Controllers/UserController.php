@@ -25,16 +25,23 @@ class UserController extends Controller
             'email' => 'required',
         ]);
 
+        // var_dump((int)$request->permission);
+        // var_dump(Auth::user()->permission);
+        // exit;
+
         $id = Auth::id();
         $name_base = Auth::user()->name;
         $email_base = Auth::user()->email;
+        $permission_base = Auth::user()->permission;
         $name = $request->name;
         $email = $request->email;
+        $permission = $request->permission;
         
-        if($name_base != $name || $email_base != $email){
+        if($name_base != $name || $email_base != $email || $permission_base != $permission){
             $data = [
                 'name' => $name,
                 'email' => $email,
+                'permission' => $permission,
                 'updated_at' => date('Y-m-d H:i:s'),
             ];
             

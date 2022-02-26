@@ -112,7 +112,10 @@
                     @endif
                 </div>
             </div>
-
+        </div>
+        
+        <!-- 右側 -->
+        <div class="right-box col-md-6 row">
             <!-- 損益(pips) -->
             <div class="in-min col-12 row">
                 <h3 class="col-3">損益(pips)</h3>
@@ -138,41 +141,6 @@
                     @endif
                 </div>
             </div>
-        </div>
-        
-        <!-- 右側 -->
-        <div class="right-box col-md-6 row">
-            <div class="r-box-title col-12 row">
-                <!-- 画像01 -->
-                <h3 class="in-bottom col-12">チャートイメージ&ensp;01</h3>
-                <div class="col-12 row">
-                    @if(isset($change_data->img_01))
-                    <img class="col-sm-12 img_change" alt="登録なし" src="{{ asset('storage/img_user/' . $change_data->img_01) }}" />
-                    @endif    
-                    <div class="col-sm-12"><input id="myImage" type="file" class="in-ans form-control-file" name="img_01" value="{{ asset('storage/img_user/' . $change_data->img_01) }}" accept="image/*"></div>
-                </div>
-                <div class="err-msg offset-3 col-9">
-                    @if(!empty($errors->first('img_01')))
-                        <p class="error_message">{{ $errors->first('img_01') }}</p>
-                    @endif
-                </div>
-            </div>
-                
-            <!-- 画像02 -->
-            <div class="r-box-title col-12 row">
-                <h3 class="in-bottom col-12">チャートイメージ&ensp;02</h3>
-                <div class="col-12 row">
-                    @if(isset($change_data->img_02))
-                    <img class="col-sm-12 img_change" alt="登録なし" src="{{ asset('storage/img_user/' . $change_data->img_02) }}" />
-                    @endif
-                    <div class="col-sm-12"><input id="myImage" type="file" class="in-ans form-control-file img_change_btn" name="img_02" value="{{ asset('storage/img_user/' . $change_data->img_02) }}" accept="image/*"></div>
-                </div>
-                <div class="err-msg offset-3 col-9">
-                    @if(!empty($errors->first('img_02')))
-                        <p class="error_message">{{ $errors->first('img_02') }}</p>
-                    @endif
-                </div>
-            </div>
             
             <!-- 備考 -->
             <div class="r-box-title u-box-title col-12">
@@ -186,6 +154,7 @@
                     @endif
                 </div>
             </div>
+        </div>
 
         <!--  完了ボタン -->
         <div class="in-btn col-6">

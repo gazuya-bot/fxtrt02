@@ -25,6 +25,22 @@
             <!-- メールアドレス -->
             <h3 class="col-3 in-min">メール</h3>
             <div class="col-9 in-min"><input value="{{ Auth::user()->email }}" type="" class="in-ans form-control u_line" name="email"></div>
+            
+            <!-- 共有許可 -->
+            <h3 class="col-3 in-min">共有許可</h3>
+            <div class="col-9 in-min">
+                @if(Auth::user()->permission == 0)
+                <select class="in-ans form-control u_line" name="permission" size="1">
+                    <option value=0>共有しない</option>
+                    <option value=1>共有する</option>
+                </select>
+                @else
+                <select class="in-ans form-control u_line" name="permission" size="1">
+                    <option value=1>共有する</option>    
+                    <option value=0>共有しない</option>                    
+                </select>
+                @endif
+            </div>
         
             <!--  変更ボタン -->
             <div class="offset-3 col-9 user-btn">

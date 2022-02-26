@@ -9,9 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class OutputController extends Controller
 {
-
-
-
     //出力画面表示・検索（１つのキーワードのみ）sum ver
     public function output()
     {

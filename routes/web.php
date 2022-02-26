@@ -25,6 +25,9 @@ Route::get('/input', 'InputController@input')->name('input')->middleware('auth')
 // 出力画面へ遷移
 Route::get('/output', 'OutputController@output')->name('output')->middleware('auth');
 
+// コミュニティ画面へ遷移
+Route::get('/community', 'CommunityController@community')->name('community')->middleware('auth');
+
 // ユーザー画面へ遷移
 Route::get('/user', 'UserController@user')->name('user')->middleware('auth');
 

@@ -1,4 +1,8 @@
-body{color: #fff!important;background-color: #343a40!important;font-family: 'Kosugi Maru', sans-serif!important;}
+body{
+    color: #fff!important;
+    background-color: #343a40!important;
+    font-family: 'Kosugi Maru', sans-serif!important;
+}
 
 /* ヘッダーメニュー */
 .main-header{background-color: #343a40!important;}
@@ -39,6 +43,7 @@ a.other-link:hover{color: #1e90ff!important;}
 /* 左右の位置調整 */
 .left-box{padding-left: 0;}
 .right-box{padding-left: 50px;padding-right: 0;}
+
 
 /* ページタイトル */
 h1{font-size: 30px!important;
@@ -237,11 +242,12 @@ h1.login{margin-bottom: 30px;}
     background-color: rgb(52, 58, 64)!important;
     border: none!important;
     max-width: 300px;
-    margin: 200px auto;
+    margin: 0 auto;
+    margin-top: 100px;
     background-color:transparent!important;
-    height: 100%;
+    /* height: 100%; */
 }
-.card-all {height: 100%;}
+/* .card-all {height: 100%;} */
 h1.pass-send{margin-top: 100px;}
 
 /* インプットボックス */
@@ -252,13 +258,13 @@ input.login{background-color: rgb(255, 255, 255, 0.8)!important;margin: 0!import
 /* 背景画像設定 */
 
 main{
-    background-image: url("/img_default/FX-logo.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    width: 50%;
+    /* background-image: url("/img_default/FX-logo.svg"); */
+    /* background-repeat: no-repeat; */
+    /* background-size: contain; */
+    /* background-position: center; */
+    /* width: 50%; */
     margin: 0 auto;
-    height: 900px;
+    /* height: 900px; */
 }
 
 /* ログインボタン */
@@ -512,64 +518,71 @@ span.small{font-size: 20px;}
 .search-box{margin-bottom: 30px;}
 
 /* スマートフォンデザイン */
+@media screen and (max-width: 767px) {
+    .right-box{padding: 0;}
+    .left-box{padding: 0;}
+}
+
+
+/* スマートフォンデザイン */
 @media screen and (max-width: 480px) {
-        /* 通貨ペア管理 */
-        .check_currency{font-size: 21px;margin-bottom:25px;letter-spacing: 1px;padding-top: 4px;}
-        h1{font-size: 25px!important;}
-        h2{font-size: 20px!important;padding: 0 0 15px 0;}
-        h3{font-size: 14px!important;padding-top: 10px;}
-        .welcome-user {font-size: 12px;}
-        div.infomation-box-02 {font-size: 12px;}
-        div.infomation-box-03 {font-size: 28px;}
-        /* 日付のスタイル */
-        .clock-date {font-size: 20px;}
-        /* 時間のスタイル */
-        .clock-time {font-size: 50px; margin: 5px 0 5px 0;}
-        .in-ans{font-size: 13px;}
-        .in-min {padding: 0;margin: 0;}
-        .right-box{padding: 5px;}
-        .in-btn{margin: 0;padding-left: 0;}
+    /* 通貨ペア管理 */
+    .check_currency{font-size: 21px;margin-bottom:25px;letter-spacing: 1px;padding-top: 4px;}
+    h1{font-size: 25px!important;}
+    h2{font-size: 20px!important;padding: 0 0 15px 0;}
+    h3{font-size: 14px!important;padding-top: 10px;}
+    .welcome-user {font-size: 12px;}
+    div.infomation-box-02 {font-size: 12px;}
+    div.infomation-box-03 {font-size: 28px;}
+    /* 日付のスタイル */
+    .clock-date {font-size: 20px;}
+    /* 時間のスタイル */
+    .clock-time {font-size: 50px; margin: 5px 0 5px 0;}
+    .in-ans{font-size: 13px;}
+    .in-min {padding: 0;margin: 0;}
+    .right-box{padding: 5px;}
+    .in-btn{margin: 0;padding-left: 0;}
 
-        /* インプットボックスデザイン */
-        .u_line{height: 35px;font-size: 16px;}
-        /* ユーザー編集不可 */
-        .u_line_non{height: 33px;font-size: 15px;}
-        
-        .s_02 .accordion_one .accordion_inner {
-            padding: 5px 0;
-        }
+    /* インプットボックスデザイン */
+    .u_line{height: 35px;font-size: 16px;}
+    /* ユーザー編集不可 */
+    .u_line_non{height: 33px;font-size: 15px;}
+    
+    .s_02 .accordion_one .accordion_inner {
+        padding: 5px 0;
+    }
 
-        .all-box{margin: 0;}
+    .all-box{margin: 0;}
 
-        /* ボタン */
-        .w-100, .w-75, .w-50 {font-size: 10px!important;}
+    /* ボタン */
+    .w-100, .w-75, .w-50 {font-size: 10px!important;}
 
 
-        /* 全体の位置調整 */
-        .card {
-            margin-top: 50px;
-        }
+    /* 全体の位置調整 */
+    .card {
+        margin-top: 50px;
+    }
 
-        h1.pass-send{margin-top: 0;}
+    h1.pass-send{margin-top: 0;}
 
-        /* 背景画像設定 */
-        main{
-            background-image: none;
-            width: 350px;
-        }
+    /* 背景画像設定 */
+    main{
+        background-image: none;
+        width: 350px;
+    }
 
-        /* 備考欄下 */
-        .u-box-title{margin-bottom: 50px!important;}
+    /* 備考欄下 */
+    .u-box-title{margin-bottom: 50px!important;}
 
-        /* 投稿編集画面の画像 */
-        img.img_change{width: 100%;margin: 10px 20px;padding: 0;}
-        .form-control-file, .form-control-range {
-            margin-left: 11px;
-        }
+    /* 投稿編集画面の画像 */
+    img.img_change{width: 100%;margin: 10px 20px;padding: 0;}
+    .form-control-file, .form-control-range {
+        margin-left: 11px;
+    }
 
-        /* 通貨ペア管理エラー調整 */
-        .err-currency{margin: -45px 0 10px 0}
-        .c-box-title{margin-bottom: 50px!important;}
+    /* 通貨ペア管理エラー調整 */
+    .err-currency{margin: -45px 0 10px 0}
+    .c-box-title{margin-bottom: 50px!important;}
 
-        .r-box-title{margin-bottom: 30px!important;}
+    .r-box-title{margin-bottom: 30px!important;}
 }

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Currency;
 // ログイン情報取得に必要
 use Illuminate\Support\Facades\Auth;
+// インポートを追加.
+use Illuminate\Validation\Rule;
 
 class CurrencyController extends Controller
 {
@@ -56,11 +58,14 @@ class CurrencyController extends Controller
             if(isset($btn_submit_01)){
                 // バリデーション
                 $request->validate([
-                    'currency_pair' => 'required|max:10|unique:currencies,currency',
+                    // unique:テーブル名,カラム名'
+                    // 'currency_pair' => 'required|max:10|unique:currencies,currency',
+                    'currency_pair' => [Rule::unique('currencies','currency')->where('user_id',$user_id)]
                 ]);
                 Currency::insert($data);
                 session()->flash('msg_success', '追加しました');
                 return redirect('/currency');
+            // 登録でないボタンが押された時の処理
             }else{
                 Currency::where('currency', $currency_pair)->delete();
                 session()->flash('msg_warning', '削除しました');

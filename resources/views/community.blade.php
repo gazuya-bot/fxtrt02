@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', '出力画面')
+@section('title', 'コミュニティ画面')
 
 @section('content_header')
-    <h1>出力画面</h1>
+    <h1>コミュニティ画面</h1>
 @stop
 
 @section('content')
