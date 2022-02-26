@@ -270,7 +270,14 @@ return [
             'icon'        => 'far fa-fw fa-file-alt',
             // 'label'       => 'Output',
             // 'label_color' => 'primary',
-        ],        
+        ],
+        [
+            'text'        => 'コミュニティ',
+            'url'         => '/community',
+            'icon'        => 'far fa-fw fa-file-alt',
+            // 'label'       => 'Output',
+            // 'label_color' => 'primary',
+        ],         
         [
             'text'        => 'ユーザー設定',
             'url'         => '/user',
